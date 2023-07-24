@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8"/>
-<title>后台管理</title>
-<link rel="stylesheet" href="/css/bootstrap.css"/>
+    <meta charset="utf-8"/>
+    <title>后台管理</title>
+    <link rel="stylesheet" href="/css/bootstrap.css"/>
 </head>
 <body>
 <div class="container">
+    <div th:replace="~{admin/header.html::header}">
+
+    </div>
+    <br><br>
+<!--    <div class="alert alert-success" role="alert">登录成功！</div>-->
+    <div th:replace="~{admin/type_list.html::typelist}">
+    </div>
 
 
-	<br><br>
-	
-	<div class="alert alert-success" role="alert">登录成功！</div>
-	
-</div>	
+</div>
 </body>
 </html>

@@ -49,9 +49,13 @@ public class IndexLoginController {
     }
 
     @PostMapping("reg")
-    public String register(Users users) {
+    public String register(Users users, Model model) {
         log.info("用户注册");
         int register = usersService.register(users);
+        if (register == 3) {
+            model.addAttribute("msg", "账号已存在");
+            return "index/register";
+        }
         return "index/login";
     }
 }
