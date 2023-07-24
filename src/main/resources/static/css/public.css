@@ -1,0 +1,17 @@
+body,button,input,select,textarea{font:14px/1.5 Tahoma,Helvetica,"Microsoft YaHei",Arial,sans-serif;}
+body,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,th,td,p,blockquote,pre,form,fieldset,legend,input,button,textarea,article,aside,footer,header,hgroup,nav,section,menu{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+li{list-style:none;}
+fieldset,img{border:0;vertical-align:middle;}
+input,textarea{outline-style:none;}
+textarea{resize:none;}
+article,aside,footer,header,hgroup,nav,section,menu{display:block;}
+address,caption,cite,code,dfn,em,i,th,var,strong{font-style:normal;font-weight:400;}
+a{text-decoration:none;outline:none; color:#919191;cursor: pointer;}
+a:hover{text-decoration:none; color:#FF712B;}
+.clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{zoom:1;}
+.hidden{ display:none;}
+body{font:14px/1.5 Tahoma,Helvetica,"Microsoft YaHei",Arial,sans-serif; background:#FFFFFF; color:#565656;}
+html{min-width: 1300px}
+input[type=button], input[type=submit], input[type=file], button { -webkit-appearance: none; }  

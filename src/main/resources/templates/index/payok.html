@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>支付</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/css/public.css">
+	<link rel="stylesheet" type="text/css" href="/css/common.css">
+	<link rel="stylesheet" type="text/css" href="/css/reclassify.css">
+</head>
+<body style="background: #fff;">
+	
+	
+	<div id="main">
+		
+		<div>
+			<img src="img/payok.jpg" width="200px">
+			<span style="font-size: 40px;">支付成功</span>
+			<a href="order">
+				<p style="width: 130px;background: #FF712B;border-radius: 6px;color: #fff;font-size: 18px;text-align: center;line-height: 48px;margin-left: 210px;">查看我的订单</p>
+			</a>
+		
+		
+		</div>
+		
+	</div>
+
+
+</body>
+<script src="/js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+// 选择支付方式
+$("#payway .payway-cont .way").on("click", function () {
+    $(this).addClass("active").siblings().removeClass("active")
+});
+// 提交支付
+$("#tijiao").on("click", function(data){
+	var paytype = $(".payway-cont .active").attr("data");
+	$("input[name=paytype]").val(paytype);
+	$("#form").submit();
+});
+</script>
+</html>

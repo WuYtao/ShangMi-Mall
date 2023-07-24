@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+</head>
+<body>
+
+	<nav class="navbar navbar-default" role="navigation" style="background-color:#fbf8ef;" th:fragment="header">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="redirect/index">后台首页</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="typeList">类目管理</a></li>
+					<li><a href="goodList">商品管理</a></li>
+					<li><a href="orderList">订单管理</a></li>
+					<li><a href="userList">客户管理</a></li>
+					<li><a href="adminList">管理员</a></li>
+					<li><a href="logout">退出</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</body>
+</html>

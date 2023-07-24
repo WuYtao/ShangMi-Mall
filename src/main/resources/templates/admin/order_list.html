@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>订单列表</title>
+<link rel="stylesheet" href="/css/bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+
+	
+	<br>
+	
+		<ul role="tablist" class="nav nav-tabs">
+        <li class="active" role="presentation"><a href="orderList">全部订单</a></li>
+        <li  role="presentation"><a href="orderList?status=1">未付款</a></li>
+        <li  role="presentation"><a href="orderList?status=2">已付款</a></li>
+        <li  role="presentation"><a href="orderList?status=3">配送中</a></li>
+        <li  role="presentation"><a href="orderList?status=4">已完成</a></li>
+    </ul>
+    
+    <br>
+	
+	<table class="table table-bordered table-hover">
+
+	<tr>
+		<th width="5%">ID</th>
+		<th width="5%">总价</th>
+		<th width="15%">商品详情</th>
+		<th width="20%">收货信息</th>
+		<th width="10%">订单状态</th>
+		<th width="10%">支付方式</th>
+		<th width="10%">下单用户</th>
+		<th width="10%">下单时间</th>
+		<th width="10%">操作</th>
+	</tr>
+	
+	
+         <tr>
+         	<td><p>6</p></td>
+         	<td><p>93</p></td>
+         	<td>
+	         	
+		         	<a target="_blank" href="../index/detail?id=32"><p>即品坚果 台湾甄选 颗颗饱满</p></a>
+		         	<p>¥12 x 2</p>
+	         	
+		         	<a target="_blank" href="../index/detail?id=4"><p>西州蜜瓜</p></a>
+		         	<p>¥30 x 2</p>
+	         	
+		         	<a target="_blank" href="../index/detail?id=6"><p>栖霞苹果 爽脆清甜</p></a>
+		         	<p>¥9 x 1</p>
+	         	
+         	</td>
+         	<td>
+         		<p>密码123456</p>
+         		<p>123456789abc</p>
+         		<p>湖南浦东新区</p>
+         	</td>
+			<td>
+				<p>
+					
+					<span style="color:red;">已付款</span>
+					
+					
+				</p>
+			</td>
+			<td>
+				<p>
+					微信
+					
+					
+				</p>
+			</td>
+			<td><p>user</p></td>
+			<td><p>2021-06-11 10:56:20</p></td>
+			<td>
+				
+					<a class="btn btn-success" href="orderUpdate?id=6&status=3">发货</a>
+				
+				
+				<a class="btn btn-danger" href="orderDelete?id=6">删除</a>
+			</td>
+       	</tr>
+	
+         <tr>
+         	<td><p>7</p></td>
+         	<td><p>21</p></td>
+         	<td>
+	         	
+		         	<a target="_blank" href="../index/detail?id=32"><p>即品坚果 台湾甄选 颗颗饱满</p></a>
+		         	<p>¥12 x 1</p>
+	         	
+		         	<a target="_blank" href="../index/detail?id=6"><p>栖霞苹果 爽脆清甜</p></a>
+		         	<p>¥9 x 1</p>
+	         	
+         	</td>
+         	<td>
+         		<p>密码123456</p>
+         		<p>123456789abc</p>
+         		<p>湖南浦东新区</p>
+         	</td>
+			<td>
+				<p>
+					
+					
+					
+					已完成
+				</p>
+			</td>
+			<td>
+				<p>
+					微信
+					
+					
+				</p>
+			</td>
+			<td><p>user</p></td>
+			<td><p>2021-06-11 17:15:22</p></td>
+			<td>
+				
+				
+				<a class="btn btn-danger" href="orderDelete?id=7">删除</a>
+			</td>
+       	</tr>
+	
+         <tr>
+         	<td><p>8</p></td>
+         	<td><p>77</p></td>
+         	<td>
+	         	
+		         	<a target="_blank" href="../index/detail?id=6"><p>栖霞苹果 爽脆清甜</p></a>
+		         	<p>¥9 x 1</p>
+	         	
+		         	<a target="_blank" href="../index/detail?id=32"><p>即品坚果 台湾甄选 颗颗饱满</p></a>
+		         	<p>¥12 x 1</p>
+	         	
+		         	<a target="_blank" href="../index/detail?id=5"><p>小台芒果 自然生长 生态种植</p></a>
+		         	<p>¥26 x 1</p>
+	         	
+		         	<a target="_blank" href="../index/detail?id=4"><p>西州蜜瓜</p></a>
+		         	<p>¥30 x 1</p>
+	         	
+         	</td>
+         	<td>
+         		<p>密码123456</p>
+         		<p>123456789abc</p>
+         		<p>湖南浦东新区</p>
+         	</td>
+			<td>
+				<p>
+					
+					
+					配送中
+					
+				</p>
+			</td>
+			<td>
+				<p>
+					
+					支付宝
+					
+				</p>
+			</td>
+			<td><p>user</p></td>
+			<td><p>2021-10-24 21:42:51</p></td>
+			<td>
+				
+				
+					<a class="btn btn-warning" href="orderUpdate?id=8&status=4">完成</a>
+				
+				<a class="btn btn-danger" href="orderDelete?id=8">删除</a>
+			</td>
+       	</tr>
+	
+         <tr>
+         	<td><p>9</p></td>
+         	<td><p>44</p></td>
+         	<td>
+	         	
+		         	<a target="_blank" href="../index/detail?id=5"><p>小台芒果 自然生长 生态种植</p></a>
+		         	<p>¥26 x 1</p>
+	         	
+		         	<a target="_blank" href="../index/detail?id=6"><p>栖霞苹果 爽脆清甜</p></a>
+		         	<p>¥9 x 1</p>
+	         	
+		         	<a target="_blank" href="../index/detail?id=6"><p>栖霞苹果 爽脆清甜</p></a>
+		         	<p>¥9 x 1</p>
+	         	
+         	</td>
+         	<td>
+         		<p></p>
+         		<p></p>
+         		<p></p>
+         	</td>
+			<td>
+				<p>
+					
+					<span style="color:red;">已付款</span>
+					
+					
+				</p>
+			</td>
+			<td>
+				<p>
+					微信
+					
+					
+				</p>
+			</td>
+			<td><p>user</p></td>
+			<td><p>2021-10-25 17:36:56</p></td>
+			<td>
+				
+					<a class="btn btn-success" href="orderUpdate?id=9&status=3">发货</a>
+				
+				
+				<a class="btn btn-danger" href="orderDelete?id=9">删除</a>
+			</td>
+       	</tr>
+	
+         <tr>
+         	<td><p>10</p></td>
+         	<td><p>12</p></td>
+         	<td>
+	         	
+		         	<a target="_blank" href="../index/detail?id=32"><p>即品坚果 台湾甄选 颗颗饱满</p></a>
+		         	<p>¥12 x 1</p>
+	         	
+         	</td>
+         	<td>
+         		<p></p>
+         		<p></p>
+         		<p></p>
+         	</td>
+			<td>
+				<p>
+					未付款
+					
+					
+					
+				</p>
+			</td>
+			<td>
+				<p>
+					
+					
+					
+				</p>
+			</td>
+			<td><p>user</p></td>
+			<td><p>2021-10-25 17:41:40</p></td>
+			<td>
+				
+				
+				<a class="btn btn-danger" href="orderDelete?id=10">删除</a>
+			</td>
+       	</tr>
+	
+     
+	</table>
+
+	<br>
+	<div style='text-align:center;'>
+		<a class='btn btn-info' href='orderList?page=1'>首页</a>
+		<a class='btn btn-info' href='orderList?page=1'>上一页</a>
+		<h2 style='display:inline;'>[2/3]</h2>
+		<h2 style='display:inline;'>[11]</h2>
+		<a class='btn btn-info' href='orderList?page=3'>下一页</a>
+		<a class='btn btn-info' href='orderList?page=3'>尾页</a>
+		<input type='text' class='form-control' style='display:inline;width:60px;' value=''/>
+		<a class='btn btn-info' href='javascript:void(0);' onclick='location.href="orderList?page="+(this.previousSibling.value)+""'>GO</a>
+	</div>
+	<br>
+</div>
+</body>
+</html>

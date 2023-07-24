@@ -1,0 +1,419 @@
+.logincoent {
+  width: 100%;
+  height: auto;
+  background: none;
+  -webkit-user-select: none;
+}
+.logincoent .nav_head {
+  width: 80%;
+  height: 100px;
+  background: #ffffff;
+  margin: 0 auto;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+.logincoent .nav_head .logo {
+  width: 208px;
+  height: 43px;
+  background: none;
+  background: url(images/log-logo_03.png) no-repeat;
+  background-size: 100% 100%;
+  float: left;
+}
+.logincoent .nav_head p {
+  float: right;
+  line-height: 50px;
+  font-size: 14px;
+  color: #6d6d6d;
+}
+.logincoent .nav_head p span a {
+  color: #ff8958;
+}
+.logincoent .rebackgroundimg {
+  width: 100%;
+  height: auto;
+  background: #ff0000;
+  background: url(../img/backimg.png) no-repeat;
+  background-size: cover;
+  padding: 50px 0 50px 0;
+  box-sizing: border-box;
+}
+.logincoent .rebackgroundimg .registruer {
+  width: 80%;
+  height: 400px;
+  background: none;
+  margin: 0 auto;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd {
+  width: 440px;
+  height: 100%;
+  background: #ffffff;
+  float: right;
+  -webkit-box-shadow: 1px 1px 1px #ccc;
+  box-shadow: 2px 5px 5px #ccc;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .iteljk {
+  width: 100%;
+  height: 60px;
+  background: none;
+  border-bottom: 1px solid #ff712b;
+  line-height: 60px;
+  padding-left: 40px;
+  box-sizing: border-box;
+  font-size: 20px;
+  color: #FF712B;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .iteljk span {
+  float: right;
+  margin-right: 40px;
+  font-size: 14px;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .ul_form .youqts {
+  display: none;
+  font-size: 14px;
+  color: #BFBFBF;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .ul_form li {
+  width: 360px;
+  height: 50px;
+  background: none;
+  border: 1px solid #cccccc;
+  margin-left: 40px;
+  margin-bottom: 22px;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .ul_form li i {
+  display: block;
+  width: 57px;
+  height: 100%;
+  background: none;
+  font-size: 30px;
+  text-align: center;
+  line-height: 55px;
+  float: left;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .ul_form li input {
+  float: left;
+  width: 280px;
+  height: 100%;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .ul_form li .yanzhen {
+  width: 190px;
+  height: 100%;
+  background: none;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .ul_form li #btn {
+  width: 85px;
+  height: 30px;
+  background: #ff712b;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin-top: 10px;
+  text-align: center;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .ul_form li span {
+  display: inline-block;
+  width: 16px;
+  height: 100%;
+  background: none;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .ul_form li .icon-xuanzhong {
+  font-size: 16px;
+  line-height: 55px;
+  color: #cccccc;
+  float: right;
+  margin-right: 5px;
+  color: #0ad52b;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .ul_form li .icon-jinggao {
+  font-size: 16px;
+  line-height: 55px;
+  color: #cccccc;
+  float: right;
+  margin-right: 5px;
+  color: #f20909;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .ul_form .user {
+  margin-top: 35px;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .sub {
+  width: 360px;
+  height: 55px;
+  background: none;
+  background: #ff712b;
+  color: #fff;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin-left: 40px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .ck {
+  width: 360px;
+  height: 35px;
+  background: none;
+  margin-left: 40px;
+  padding-top: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .ck .zid {
+  position: absolute;
+  left: 21px;
+  top: 12px;
+  font-size: 12px;
+  color: #333333;
+}
+.logincoent .rebackgroundimg .registruer .regrnamepwd .ck .zd {
+  float: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.logincoent .backgroundimg {
+  width: 100%;
+  height: auto;
+  background: #ff0000;
+  background: url(images/backimg.png) no-repeat;
+  background-size: cover;
+  padding: 70px 0 70px 0;
+  box-sizing: border-box;
+}
+.logincoent .backgroundimg .userpwd {
+  width: 80%;
+  height: 406px;
+  background: none;
+  margin: 0 auto;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd {
+  width: 440px;
+  height: 100%;
+  background: #ffffff;
+  float: right;
+  -webkit-box-shadow: 2px 5px 5px #ccc;
+  box-shadow: 1px 1px 1px #ccc;
+  position: relative;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd p {
+  width: 100%;
+  height: 60px;
+  background: none;
+  border-bottom: 1px solid #ff712b;
+  line-height: 60px;
+  padding-left: 40px;
+  box-sizing: border-box;
+  font-size: 20px;
+  color: #FF712B;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .tiixn {
+  position: absolute;
+  display: inline-block;
+  width: auto;
+  height: 25px;
+  background: #b0afaf;
+  margin-left: 40px;
+  margin-top: 5px;
+  display: none;
+  font-size: 12px;
+  color: #f41212;
+  line-height: 25px;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .tiixn i {
+  vertical-align: middle;
+  color: #d81e06;
+  line-height: 25px;
+  margin-right: 5px;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .ul_form li {
+  width: 360px;
+  height: 55px;
+  background: none;
+  border: 1px solid #cccccc;
+  margin-left: 40px;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .ul_form li i {
+  display: block;
+  width: 57px;
+  height: 100%;
+  background: none;
+  font-size: 30px;
+  text-align: center;
+  line-height: 55px;
+  float: left;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .ul_form li input {
+  float: left;
+  width: 280px;
+  height: 100%;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .ul_form li span {
+  font-size: 16px;
+  line-height: 55px;
+  color: #cccccc;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .ul_form .user {
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .ck {
+  width: 360px;
+  height: 35px;
+  background: none;
+  margin-left: 40px;
+  padding-top: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .ck .zid {
+  position: absolute;
+  left: 41px;
+  top: 12px;
+  font-size: 14px;
+  color: #333333;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .ck .zd {
+  float: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .ck .wangjiz {
+  float: right;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .ck .wangjiz span {
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  background: #d1d1d1;
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .sub {
+  width: 360px;
+  height: 55px;
+  background: none;
+  background: #ff712b;
+  color: #fff;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin-left: 40px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .cooperation {
+  width: 230px;
+  height: 35px;
+  background: none;
+  margin-left: 40px;
+  margin-top: 8px;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .cooperation span {
+  color: #5e5e5e;
+  font-size: 12px;
+}
+.logincoent .backgroundimg .userpwd .usernamepwd .cooperation i {
+  font-size: 26px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.logincoent .logbotm {
+  width: 80%;
+  height: 142px;
+  background: none;
+  margin: 0 auto;
+}
+.logincoent .logbotm .foternttr {
+  width: 561px;
+  height: 100%;
+  background: #ffffff;
+  margin: 0 auto;
+  padding-top: 40px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.logincoent .logbotm .foternttr ul {
+  margin-left: 50px;
+  width: 100%;
+}
+.logincoent .logbotm .foternttr ul li {
+  float: left;
+  font-size: 12px;
+  color: #333333;
+  margin-right: 7px;
+  margin-bottom: 10px;
+}
+.logincoent .logbotm .foternttr ul span {
+  display: inline-block;
+  width: 2px;
+  height: 13px;
+  background: #666666;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+.logincoent .logbotm .foternttr .bangong {
+  clear: both;
+  font-size: 12px;
+  color: #666666;
+}
+.logincoent .logbotm .foternttr .bangong span {
+  margin-left: 32px;
+}
+.logincoent .logbotm .foternttr .beian {
+  font-size: 12px;
+  color: #666666;
+  margin-top: 12px;
+}
+.chk_1 {
+  display: none;
+}
+.chk_1 + label {
+  background-color: #FFF;
+  border: 1px solid #C1CACA;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 9px;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+}
+.chk_1 + label:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.chk_1:checked + label {
+  background-color: #ECF2F7;
+  border: 1px solid #92A1AC;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+  color: #243441;
+}
+.chk_1:checked + label:after {
+  content: '\2714';
+  position: absolute;
+  top: -5px;
+  left: 0px;
+  color: #758794;
+  width: 10px;
+  text-align: center;
+  font-size: 1.4em;
+  padding: 1px 0 0 0;
+  vertical-align: text-top;
+}

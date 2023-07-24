@@ -1,0 +1,282 @@
+.order-operation {
+  height: 55px;
+  background: #fff;
+  overflow: hidden;
+  margin-top: 10px;
+  padding: 0 30px;
+  border-bottom: 1px solid #bfbfbf; }
+  .order-operation #all-affirm {
+    margin-top: 10px;
+    float: right;
+    width: 109px;
+    height: 36px;
+    background: #FF712B;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 36px;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px; }
+  .order-operation .order-search {
+    width: 318px;
+    height: 26px;
+    margin-top: 15px;
+    float: left; }
+    .order-operation .order-search input {
+      width: 250px;
+      height: 26px;
+      border: 1px solid #bfbfbf;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      float: left;
+      border-right: none;
+      padding-left: 10px;
+      font-size: 12px;
+      color: #333; }
+    .order-operation .order-search .order-search-c {
+      width: 56px;
+      height: 26px;
+      background: #e1e1e1;
+      color: #666;
+      float: left;
+      text-align: center;
+      line-height: 26px;
+      cursor: pointer;
+      border: none;
+      outline: none; }
+
+.order-info {
+  height: 50px;
+  background: #ffdfcf;
+  border: 1px solid #ffefe7;
+  border-bottom: none; }
+  .order-info input,
+  .order-info span,
+  .order-info i {
+    float: left; }
+  .order-info input {
+    margin-left: 33px;
+    width: 12px;
+    height: 12px;
+    margin-top: 6px; }
+  .order-info .order-time,
+  .order-info span {
+    font-size: 16px;
+    color: #666; }
+  .order-info .order-num {
+    font-size: 16px;
+    color: #303030; }
+  .order-info b {
+    float: right;
+    font-weight: normal;
+    font-size: 20px;
+    color: #8a8a8a;
+    margin-right: 30px;
+    cursor: pointer; }
+
+thead .li1 {
+  padding-left: 33px;
+  width: 80px; }
+  thead .li1 input {
+    float: left;
+    width: 12px;
+    height: 12px; }
+thead .li2 {
+  width: 330px; }
+thead span {
+  font-size: 16px;
+  color: #333; }
+
+tbody .li1 {
+  width: 750px; }
+
+.li3 {
+  width: 150px; }
+
+.li4 {
+  width: 150px; }
+
+.li5 {
+  width: 0px; }
+
+.li6 {
+  width: 150px; }
+
+.li7 {
+  width: 150px; }
+
+.li8 {
+  width: 150px; }
+
+.order {
+  margin-bottom: 10px;
+  background: #fff; }
+  .order td {
+    padding: 12px 0;
+   /*  height: 100px; */
+    border: 1px solid #ffefe7; }
+  .order .li1 {
+    padding-left: 20px; }
+    .order .li1 img {
+      float: left;
+      width: 80px;
+      height: 80px; }
+    .order .li1 div {
+      float: left;
+      text-align: left; }
+    .order .li1 .li3,
+    .order .li1 .li4,
+    .order .li1 .li5 {
+      float: left;
+      text-align: center;
+      height: 100%;
+      text-align: center; }
+      .order .li1 .li3 span,
+      .order .li1 .li4 span,
+      .order .li1 .li5 span {
+        font-size: 14px;
+        color: #333; }
+        .order .li1 .li3 span:hover,
+        .order .li1 .li4 span:hover,
+        .order .li1 .li5 span:hover {
+          color: #FF712B; }
+      .order .li1 .li3 i,
+      .order .li1 .li4 i,
+      .order .li1 .li5 i {
+        font-size: 14px;
+        color: #333; }
+    .order .li1 .m-good-descript {
+      width: 340px; }
+    .order .li1 p {
+      padding: 0 20px; }
+    .order .li1 .goods-descript {
+      font-size: 12px;
+      line-height: 18px;
+      height: 36px;
+      color: #303030; }
+    .order .li1 .th {
+      font-size: 12px;
+      color: #7e7e7e;
+      line-height: 40px; }
+      .order .li1 .th i {
+        font-size: 18px;
+        color: #FF712B;
+        line-height: 40px;
+        margin-right: 5px;
+        float: left;
+        margin-top: 1px; }
+  .order .li6 div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    float: left; }
+  .order .li6 .total-money {
+    font-size: 16px;
+    color: #333; }
+  .order .li6 .yunfei {
+    font-size: 12px;
+    color: #666; }
+  .order .li7 div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    float: left; }
+  .order .li7 p {
+    text-align: left;
+    margin-left: 20px; }
+  .order .li7 .order-state {
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    cursor: pointer; }
+  .order .li7 .link-kefu,
+  .order .li7 .order-logistic, .order .li7 .order-detail {
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    cursor: pointer; }
+    .order .li7 .link-kefu:hover,
+    .order .li7 .order-logistic:hover, .order .li7 .order-detail:hover {
+      color: #FF712B; }
+  .order .li8 div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    float: left; }
+  .order .li8 span {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 78px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 14px;
+    cursor: pointer; }
+  .order .li8 .sta1 {
+    border: 1px solid #FF712B;
+    color: #FF712B;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px; }
+    .order .li8 .sta1:hover {
+      background: #FF712B;
+      color: #fff; }
+  .order .li8 .sta2 {
+    color: #666; }
+    .order .li8 .sta2:hover {
+      color: #FF712B; }
+  .order .li8 .sta3 {
+    width: 52px;
+    height: 28px;
+    border: 1px solid #bfbfbf;
+    color: #333;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px; }
+    .order .li8 .sta3:hover {
+      color: #FF712B;
+      border: 1px solid #FF712B; }
+
+#itemContainer table {
+      margin: 30px 0; }
+
+.receive .order-info {
+  border: none; }
+.receive .order td {
+  border: 1px solid #eee; }
+
+.quik {
+  cursor: pointer; }
+
+.mm-tip {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 140px;
+  height: 46px;
+  margin-left: -70px;
+  margin-top: -23px;
+  background: #000;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  line-height: 46px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px; }
+
+/*# sourceMappingURL=m-my-order.css.map */

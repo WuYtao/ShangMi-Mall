@@ -1,0 +1,32 @@
+spring:
+  #????
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/shangmimall?serverTimezone=UTC
+      username: root
+      password: aM1ARI7dzqfZeAN671AyWlcuSDvR6os0jVQ7kJVHfMQ64k3t7GcuLna2wGovctxVd1rV/sWPk/f88owi06z72A==
+      filters: config
+      #????????????publickey
+      connection-properties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAI1dXNJlFPiMAkZHqD2Xu+2+MJS+XFyWH2LentB9NOUBRSJH3oZmEPHRzUvmZVh4PClRMUQD9MqJfbgnkrxjoMMCAwEAAQ==
+      #StatViewServlet??
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: admin
+        url-pattern: /druid/*
+  thymeleaf:
+    cache: false
+#    mode: html
+#    encoding: UTF-8
+#    prefix: classpath:/templates/
+#    suffix: .html
+#mybatis??
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+#spring????
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug

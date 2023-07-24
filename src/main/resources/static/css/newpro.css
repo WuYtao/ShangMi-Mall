@@ -1,0 +1,109 @@
+body {
+  background: #f9f9f9; }
+
+#navall {
+  border-bottom: 2px solid #FF712B; }
+
+#newpro-bg {
+  width: 100%;
+  height: 400px;
+  background: url(img/newprobg.jpg) no-repeat center 0; }
+
+#mainall {
+  width: 100%;
+  overflow: hidden; }
+  #mainall #main {
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    }
+    #mainall #main .active-pro {
+      height: 800px;
+      text-align: center; }
+      #mainall #main .active-pro img {
+        margin-bottom: 36px; }
+    
+      #mainall #main .newpro .newpro-tit {
+        width: 1200px;
+        height: 78px;
+        margin: 0 auto;
+        text-align: center;
+        display: none; }
+      #mainall #main .newpro .newpro-cont .goods {
+        width: 250px;
+        height: 400px;
+        text-align: center;
+        position: relative;
+        float: left;
+        background: #fff;
+        padding: 0 20px;
+        margin-bottom: 10px;
+        margin-right: 10px; }
+        #mainall #main .newpro .newpro-cont .goods img {
+          width: 200px;
+          height: 200px;
+          margin-top: 25px;
+          margin-bottom: 15px; }
+        #mainall #main .newpro .newpro-cont .goods p {
+          width: 240px;
+          margin: 0 auto; }
+        #mainall #main .newpro .newpro-cont .goods .bq {
+          width: 45px;
+          height: 45px;
+          color: #fff;
+          position: absolute;
+          left: 0;
+          top: 0;
+          background: url(img/limit-bq.png) no-repeat; }
+        #mainall #main .newpro .newpro-cont .goods .goodsname {
+          height: 36px;
+          text-align: left;
+          font-size: 14px;
+          margin-bottom: 15px; }
+          #mainall #main .newpro .newpro-cont .goods .goodsname a {
+            color: #303030; }
+        #mainall #main .newpro .newpro-cont .goods .goodsprices {
+          width: 120px;
+          font-size: 20px;
+          color: #adadad;
+          text-align: left;
+          float: left; }
+          #mainall #main .newpro .newpro-cont .goods .goodsprices .yj {
+            display: block;
+            color: #FF712B;
+            margin-right: 5px; }
+            #mainall #main .newpro .newpro-cont .goods .goodsprices .yj .yjcont {
+              font-size: 28px; }
+          #mainall #main .newpro .newpro-cont .goods .goodsprices del {
+            font-size: 14px; }
+        #mainall #main .newpro .newpro-cont .goods .addcart {
+          width: 100px;
+          height: 40px;
+          border-radius: 6px;
+          background: #FF712B;
+          color: #fff;
+          text-align: center;
+          line-height: 40px;
+          margin-top: 10px;
+          font-size: 14px;
+          float: right;
+          margin-right: 15px; }
+        #mainall #main .newpro .newpro-cont .goods .kyd{
+          width: 100px;
+          height: 40px;
+          border-radius: 6px;
+          background: #FF712B;
+          color: #fff;
+          text-align: center;
+          line-height: 40px;
+          margin-top: 10px;
+          font-size: 14px;
+          float: right;
+          margin-right: 15px;
+        }
+      #mainall #main .newpro .newpro-cont .active {
+        box-shadow: 0px 1px 10px #e1e1e1; }
+        #mainall #main .newpro .newpro-cont .active .goodsname a {
+          color: #FF712B; }
+
+/*# sourceMappingURL=newpro.css.map */

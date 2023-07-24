@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>商品添加</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="/css/bootstrap.css" />
+</head>
+<body>
+<div class="container">
+
+	<br><br>
+	<form class="form-horizontal" action="goodSave" method="post" enctype="multipart/form-data">
+		<div class="form-group">
+			<label for="input_file" class="col-sm-1 control-label">封面</label> 
+			<div class="col-sm-6">
+				<input type="file" name="file"  id="input_file" required="required" style="display:inline;"> ( 推荐尺寸: 500 * 500 )
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="input_name" class="col-sm-1 control-label">名称</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" name="name" required="required" placeholder="请输入文本">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="input_name" class="col-sm-1 control-label">介绍</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" name="intro" required="required" placeholder="请输入文本">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="input_name" class="col-sm-1 control-label">规格</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" name="spec" required="required" placeholder="请输入文本">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="input_name" class="col-sm-1 control-label">价格</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" name="price" required="required" placeholder="请输入数字" onkeyup="this.value=this.value.replace(/[^\d]+/g,'')">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="input_name" class="col-sm-1 control-label">库存</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" name="stock" required="required" placeholder="请输入数字" onkeyup="this.value=this.value.replace(/[^\d]+/g,'')">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="select_topic" class="col-sm-1 control-label">类目</label>
+			<div class="col-sm-6">
+				<select class="form-control" id="select_topic" name="typeId">
+					
+						<option value="1">蔬菜水果</option>
+					
+						<option value="2">肉禽蛋奶</option>
+					
+						<option value="3">米面粮油</option>
+					
+						<option value="4">休闲零食</option>
+					
+						<option value="5">玩具</option>
+					
+						<option value="6">户外用品</option>
+					
+				</select>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="select_topic" class="col-sm-1 control-label">详情</label>
+			<div class="col-sm-6">
+				<textarea id="editor" name="content" style="width:800px;height:600px;"></textarea>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-10">
+				<button type="submit" class="btn btn-success">提交保存</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<script charset="utf-8" src="../editor/kindeditor-all.js"></script>
+<script charset="utf-8" src="../editor/lang/zh-CN.js"></script>
+<script charset="utf-8" src="../editor/editor.js"></script>
+</body>
+</html>

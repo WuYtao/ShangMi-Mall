@@ -1,0 +1,652 @@
+#xnavall {
+  width: 100%;
+  border-top: 2px solid #FF712B; }
+  #xnavall #xnav {
+    width: 1200px;
+    height: 53px;
+    line-height: 55px;
+    margin: 0 auto; }
+    #xnavall #xnav span a {
+      font-size: 14px;
+      color: #5f5f5f; }
+
+#main {
+  width: 1200px;
+  overflow: hidden;
+  margin: 0 auto; }
+  #main .main-left .goodsimg {
+    width: 400px;
+    float: left; }
+    #main .main-left .goodsimg .goodsbigimg {
+      position: relative; }
+      #main .main-left .goodsimg .goodsbigimg .mdd-m-shui {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(img/m_xiang_shui.png);
+        background-repeat: no-repeat; }
+      #main .main-left .goodsimg .goodsbigimg img {
+        width: 400px;
+        height: 400px;
+        border: 1px solid #ccc; }
+    #main .main-left .goodsimg .goodssmimg {
+      width: 360px;
+      height: 67px;
+      position: relative;
+      margin-top: 18px;
+      padding: 0 15px;
+      overflow: hidden; }
+      #main .main-left .goodsimg .goodssmimg .m-ul-box {
+        width: 100%;
+        overflow: hidden; }
+      #main .main-left .goodsimg .goodssmimg .btnleft {
+        position: absolute;
+        left: 0px;
+        top: 25px;
+        cursor: pointer; }
+      #main .main-left .goodsimg .goodssmimg .btnright {
+        position: absolute;
+        right: 0px;
+        top: 25px;
+        cursor: pointer; }
+      #main .main-left .goodsimg .goodssmimg ul li {
+        float: left;
+        margin-right: 10px;
+        cursor: pointer;
+        border: 1px solid #fff; }
+        #main .main-left .goodsimg .goodssmimg ul li img {
+          width: 62px;
+          height: 62px; }
+      #main .main-left .goodsimg .goodssmimg ul .active {
+        border: 1px solid #FF712B; }
+    #main .main-left .goodsimg .share {
+      margin-top: 20px; }
+      #main .main-left .goodsimg .share p {
+        float: left;
+        margin-right: 25px;
+        color: #5E5E5E;
+        font-size: 12px; }
+  #main .main-left .goodscont {
+    width: 560px;
+    float: left;
+    margin-left: 40px; }
+    #main .main-left .goodscont .goodsname {
+      font-size: 18px;
+      color: #333333;
+      margin: 8px 0; }
+    #main .main-left .goodscont .goodsdis {
+      font-size: 14px;
+      color: #ff712b;
+      margin-bottom: 18px; }
+    #main .main-left .goodscont .gattr {
+      margin-bottom: 25px; }
+      #main .main-left .goodscont .gattr .tit {
+        color: #7E7E7E;
+        font-size: 14px;
+        margin-right: 26px; }
+      #main .main-left .goodscont .gattr .opri {
+        color: #FF712B;
+        font-size: 20px; }
+        #main .main-left .goodscont .gattr .opri .opcont {
+          font-size: 30px; }
+      #main .main-left .goodscont .gattr del {
+        font-size: 16px;
+        color: #ADADAD; }
+      #main .main-left .goodscont .gattr .gactive {
+        display: inline-block;
+        padding: 1px 10px;
+        border: 1px solid #FF712B;
+        color: #FF712B;
+        font-size: 14px; }
+      #main .main-left .goodscont .gattr .gadis {
+        font-size: 14px;
+        color: #5E5E5E; }
+      #main .main-left .goodscont .gattr select {
+        font-size: 14px;
+        color: #5E5E5E;
+        border: none; }
+      #main .main-left .goodscont .gattr .gstate {
+        color: #FF712B; }
+      #main .main-left .goodscont .gattr .gyf {
+        font-size: 12px;
+        color: #5E5E5E; }
+      #main .main-left .goodscont .gattr .gtime {
+        font-size: 12px;
+        color: #969696;
+        margin-left: 60px; }
+      #main .main-left .goodscont .gattr .gxl {
+        padding: 4px 14px;
+        border: 1px dashed #5E5E5E;
+        margin-right: 15px;
+        display: inline-block;
+        position: relative; }
+        #main .main-left .goodscont .gattr .gxl i {
+          position: absolute;
+          right: -1px;
+          bottom: -6px;
+          color: #FF712B;
+          display: none; }
+      #main .main-left .goodscont .gattr .xl-active {
+        border-color: #FF712B;
+        border-style: solid; }
+        #main .main-left .goodscont .gattr .xl-active i {
+          display: block; }
+      #main .main-left .goodscont .gattr .gnorms {
+        padding: 4px 10px;
+        border: 1px dashed #ccc;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        display: inline-block;
+        position: relative; }
+        #main .main-left .goodscont .gattr .gnorms i {
+          position: absolute;
+          right: -2px;
+          bottom: -9px;
+          color: #FF712B;
+          display: none; }
+      #main .main-left .goodscont .gattr .norm-active {
+        border-color: #FF712B;
+        border-style: solid; }
+        #main .main-left .goodscont .gattr .norm-active i {
+          display: block; }
+      #main .main-left .goodscont .gattr .btn {
+        width: 25px;
+        height: 24px;
+        background: #fff;
+        border: 1px solid #ccc;
+        color: #ccc; }
+      #main .main-left .goodscont .gattr #sum {
+        width: 40px;
+        height: 23px;
+        text-align: center;
+        border: 1px solid #ccc; }
+      #main .main-left .goodscont .gattr .xg {
+        margin-left: 10px;
+        font-size: 12px;
+        color: #ff712b; }
+    #main .main-left .goodscont .handle {
+      padding-bottom: 30px;
+      border-bottom: 1px solid #ccc;
+      margin-right: 40px;
+      overflow: hidden; }
+      #main .main-left .goodscont .handle p {
+        padding: 12px 25px;
+        float: left;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer; }
+      #main .main-left .goodscont .handle .addcart {
+        background: #FF712B;
+        margin-left: 60px; }
+      #main .main-left .goodscont .handle .buy {
+        background: #ffb72b;
+        margin-left: 30px; }
+      #main .main-left .goodscont .handle .reserve {
+        background: #FF712B;
+        margin-left: 60px; }
+    #main .main-left .goodscont .sjfw {
+      overflow: hidden;
+      margin-top: 25px; }
+      #main .main-left .goodscont .sjfw span {
+        margin-left: 25px;
+        font-size: 12px;
+        color: #7E7E7E; }
+      #main .main-left .goodscont .sjfw i {
+        color: #FF712B;
+        margin-right: 5px; }
+  #main .main-left .allbuy {
+    width: 174px;
+    float: left;
+    border-left: 1px solid #ccc;
+    padding-left: 12px; }
+    #main .main-left .allbuy .tit {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 20px; }
+      #main .main-left .allbuy .tit s {
+        width: 20px;
+        border-top: 1px solid #ccc;
+        display: inline-block;
+        position: relative;
+        top: -5px;
+        margin: 0 2px; }
+    #main .main-left .allbuy ul {
+      width: 75px;
+      margin: 0 auto; }
+      #main .main-left .allbuy ul li {
+        float: left;
+        margin-right: 10px;
+        cursor: pointer; }
+        #main .main-left .allbuy ul li i {
+          font-size: 14px;
+          color: #ffb895; }
+        #main .main-left .allbuy ul li .active {
+          color: #FF712B; }
+    #main .main-left .allbuy .abgoods .hide {
+      display: none; }
+    #main .main-left .allbuy .abgoods .goods {
+      text-align: center; }
+      #main .main-left .allbuy .abgoods .goods img {
+        width: 160px;
+        height: 160px; }
+      #main .main-left .allbuy .abgoods .goods .goodsprice {
+        margin-top: -20px;
+        color: #FF712B;
+        font-size: 12px;
+        background: url(img/allbuy.png);
+        position: relative;
+        z-index: 99; }
+        #main .main-left .allbuy .abgoods .goods .goodsprice span {
+          font-size: 18px; }
+      #main .main-left .allbuy .abgoods .goods .goodsname {
+        color: #5E5E5E;
+        margin: 14px 0; }
+
+#cont {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden; }
+  #cont #hottj {
+    width: 198px;
+    float: left;
+    overflow: hidden;
+    border: 1px solid #ccc; }
+    #cont #hottj .tit {
+      height: 48px;
+      text-align: center;
+      line-height: 48px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      background: #FF712B; }
+    #cont #hottj .hotgoods .goods {
+      text-align: center;
+      margin-top: 18px; }
+      #cont #hottj .hotgoods .goods img {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 14px; }
+      #cont #hottj .hotgoods .goods .goodsname {
+        width: 160px;
+        margin: 0 auto;
+        color: #5E5E5E;
+        text-align: left; }
+      #cont #hottj .hotgoods .goods .goodsprice {
+        color: #FF712B;
+        font-size: 12px; }
+        #cont #hottj .hotgoods .goods .goodsprice span {
+          font-size: 18px; }
+  #cont .goodsmain {
+    float: left;
+    }
+    #cont .goodsmain .goodstit {
+      height: 46px;
+      border: 1px solid #ccc;
+      border-bottom: 2px solid #FF712B; }
+      #cont .goodsmain .goodstit ul li {
+        float: left;
+        line-height: 46px;
+        padding: 0px 28px;
+        font-size: 16px;
+        cursor: pointer; }
+        #cont .goodsmain .goodstit ul li span {
+          font-size: 12px; }
+      #cont .goodsmain .goodstit ul .active {
+        background: #FF712B;
+        color: #FFFFFF; }
+    #cont .goodsmain .gmain .pj {
+      display: none; }
+    #cont .goodsmain .gmain .sh {
+      display: none;
+      border: 1px solid #CCCCCC;
+      margin-top: 20px;
+      padding-bottom: 40px; }
+      #cont .goodsmain .gmain .sh .shtit {
+        width: 100%;
+        height: 40px;
+        border-bottom: 1px solid #ccc;
+        font-size: 16px;
+        color: #333;
+        line-height: 40px;
+        padding-left: 28px; }
+      #cont .goodsmain .gmain .sh .shcont {
+        padding-left: 145px; }
+        #cont .goodsmain .gmain .sh .shcont .shconttit {
+          height: 40px;
+          border-bottom: 1px solid #ccc; }
+          #cont .goodsmain .gmain .sh .shcont .shconttit .sct {
+            height: 40px;
+            width: 68px;
+            line-height: 40px;
+            border-bottom: 1px solid #FF712B;
+            font-size: 14px;
+            color: #333; }
+        #cont .goodsmain .gmain .sh .shcont p {
+          margin-top: 20px; }
+          #cont .goodsmain .gmain .sh .shcont p img {
+            width: 40px;
+            height: 40px; }
+          #cont .goodsmain .gmain .sh .shcont p .shts {
+            font-size: 16px;
+            color: #FF712B;
+            display: inline-block;
+            width: 140px;
+            margin-left: 20px; }
+          #cont .goodsmain .gmain .sh .shcont p .shdis {
+            font-size: 14px;
+            color: #5E5E5E; }
+          #cont .goodsmain .gmain .sh .shcont p .ztit {
+            font-size: 14px;
+            color: #333; }
+    #cont .goodsmain .gmain .main .goodsstate {
+      width: 730px;
+      padding-top: 30px;
+      overflow: hidden;
+      padding-right: 257px;
+      padding-bottom: 20px;
+      border: 1px solid #ccc; }
+      #cont .goodsmain .gmain .main .goodsstate ul li {
+        width: 280px;
+        float: left;
+        margin-left: 56px;
+        font-size: 12px;
+        color: #7E7E7E;
+        margin-bottom: 5px; }
+    #cont .goodsmain .gmain .main .dateilsimg {
+      width: 990px;
+      position: relative;
+      padding-top: 40px;
+      text-align: center; }
+      #cont .goodsmain .gmain .main .dateilsimg .mdd-shui {
+        position: absolute;
+        width: 730px;
+        height: 100%;
+        left: 129px;
+        background-image: url(img/mdd_xiang.png);
+        background-repeat: repeat-y; }
+    #cont .goodsmain .gmain .main .userpj {
+      width: 990px;
+      margin-top: 40px; }
+      #cont .goodsmain .gmain .main .userpj .pjtit {
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+        line-height: 40px;
+        padding-left: 28px;
+        background: #FF712B;
+        color: #FFFFFF; }
+      #cont .goodsmain .gmain .main .userpj .pjbl {
+        overflow: hidden;
+        border: 1px solid #CCCCCC; }
+        #cont .goodsmain .gmain .main .userpj .pjbl .pjbl-left {
+          width: 110px;
+          color: #FF712B;
+          float: left;
+          text-align: center;
+          margin-top: 20px;
+          margin-left: 55px; }
+          #cont .goodsmain .gmain .main .userpj .pjbl .pjbl-left .blcont {
+            font-size: 24px; }
+            #cont .goodsmain .gmain .main .userpj .pjbl .pjbl-left .blcont span {
+              font-size: 60px; }
+          #cont .goodsmain .gmain .main .userpj .pjbl .pjbl-left p {
+            font-size: 16px;
+            color: #5E5E5E; }
+        #cont .goodsmain .gmain .main .userpj .pjbl .pjbl-right {
+          width: 250px;
+          float: left;
+          margin-top: 30px;
+          margin-left: 80px; }
+          #cont .goodsmain .gmain .main .userpj .pjbl .pjbl-right p {
+            font-size: 14px;
+            color: #5E5E5E;
+            margin-bottom: 20px; }
+            #cont .goodsmain .gmain .main .userpj .pjbl .pjbl-right p span {
+              font-size: 12px; }
+            #cont .goodsmain .gmain .main .userpj .pjbl .pjbl-right p .bl {
+              display: inline-block;
+              width: 40px; }
+            #cont .goodsmain .gmain .main .userpj .pjbl .pjbl-right p .jd {
+              display: inline-block;
+              width: 130px;
+              height: 16px;
+              border-radius: 8px;
+              background: #efefef;
+              margin-left: 20px; }
+              #cont .goodsmain .gmain .main .userpj .pjbl .pjbl-right p .jd s {
+                display: inline-block;
+                width: 100px;
+                height: 16px;
+                background: #FF712B;
+                border-radius: 8px; }
+      #cont .goodsmain .gmain .main .userpj .pjnav {
+        overflow: hidden;
+        border-bottom: 1px solid #ccc;
+        margin-top: 25px; }
+        #cont .goodsmain .gmain .main .userpj .pjnav ul li {
+          cursor: pointer;
+          float: left;
+          line-height: 40px;
+          padding: 0 15px; }
+        #cont .goodsmain .gmain .main .userpj .pjnav ul .active {
+          color: #FF712B;
+          border-bottom: 2px solid #FF712B; }
+      #cont .goodsmain .gmain .main .userpj .pjcont .cont {
+        overflow: hidden; }
+        #cont .goodsmain .gmain .main .userpj .pjcont .cont .cont-left {
+          width: 100px;
+          height: 150px;
+          float: left;
+          text-align: center;
+          margin-right: 20px; }
+          #cont .goodsmain .gmain .main .userpj .pjcont .cont .cont-left .userimg {
+            width: 80px;
+            height: 80px;
+            border-radius: 40px;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: 30px;
+            margin-bottom: 15px; }
+            #cont .goodsmain .gmain .main .userpj .pjcont .cont .cont-left .userimg img {
+              width: 100%;
+              height: 100%; }
+        #cont .goodsmain .gmain .main .userpj .pjcont .cont .cont-cen {
+          width: 700px;
+          float: left; }
+          #cont .goodsmain .gmain .main .userpj .pjcont .cont .cont-cen .pjs {
+            font-size: 16px;
+            color: #FF712B;
+            margin-top: 30px;
+            margin-bottom: 25px; }
+          #cont .goodsmain .gmain .main .userpj .pjcont .cont .cont-cen .pjscont {
+            font-size: 14px;
+            color: #5E5E5E;
+            margin-bottom: 20px; }
+          #cont .goodsmain .gmain .main .userpj .pjcont .cont .cont-cen .pjimg img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            cursor: pointer; }
+          #cont .goodsmain .gmain .main .userpj .pjcont .cont .cont-cen .bigimg {
+            display: none;
+            max-width: 200px;
+            max-height: 250px;
+            margin-top: 10px; }
+            #cont .goodsmain .gmain .main .userpj .pjcont .cont .cont-cen .bigimg img {
+              border: 1px solid #ccc;
+              cursor: pointer;
+              width: 100%; }
+        #cont .goodsmain .gmain .main .userpj .pjcont .cont .cont-time {
+          float: right; }
+          #cont .goodsmain .gmain .main .userpj .pjcont .cont .cont-time span {
+            font-size: 14px;
+            color: #5E5E5E; }
+
+.mark {
+  width: 100%;
+  height: 100%;
+  background: #333;
+  opacity: 0.15;
+  filter: alpha(opacity=15);
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  display: none; }
+
+.addsuc {
+  width: 500px;
+  height: 380px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  padding: 0 50px;
+  position: fixed;
+  top: 20%;
+  left: 30%;
+  z-index: 9999;
+  display: none; }
+  .addsuc .del {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer; }
+  .addsuc .suc-tit {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    line-height: 50px;
+    padding-top: 50px;
+    margin-bottom: 40px; }
+    .addsuc .suc-tit i {
+      color: #FF712B;
+      font-size: 30px;
+      line-height: 50px;
+      margin-right: 20px;
+      margin-top: 20px; }
+  .addsuc .suc-cont {
+    overflow: hidden; }
+    .addsuc .suc-cont .suc-left {
+      float: left;
+      margin-right: 20px; }
+      .addsuc .suc-cont .suc-left img {
+        width: 100px;
+        height: 100px; }
+    .addsuc .suc-cont .suc-right {
+      float: left;
+      width: 370px; }
+      .addsuc .suc-cont .suc-right .goodsname {
+        font-size: 14px;
+        color: #434343; }
+      .addsuc .suc-cont .suc-right .goods-norm {
+        margin-top: 20px;
+        overflow: hidden; }
+        .addsuc .suc-cont .suc-right .goods-norm .sum {
+          float: left;
+          font-size: 12px;
+          color: #7E7E7E; }
+        .addsuc .suc-cont .suc-right .goods-norm .price {
+          float: right; }
+      .addsuc .suc-cont .suc-right .goods-hj {
+        margin-top: 20px;
+        float: right;
+        color: #FF712B; }
+  .addsuc .suc-foot {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 50px; }
+    .addsuc .suc-foot p {
+      padding: 10px 20px;
+      float: left;
+      border-radius: 6px; }
+    .addsuc .suc-foot .gobuy {
+      border: 1px solid #ccc;
+      margin-left: 145px;
+      margin-right: 30px;
+      cursor: pointer; }
+    .addsuc .suc-foot .gocart {
+      background: #FF712B;
+      color: #fff;
+      cursor: pointer; }
+
+.holder {
+  float: right; }
+  .holder a {
+    display: inline-block;
+    width: 44px;
+    height: 35px;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 2px; }
+  .holder .jp-current {
+    color: #FF712B; }
+
+/*# sourceMappingURL=details.css.map */
+#main .main-left .goodscont .m-ms {
+      width: 514px;
+      height: 34px;
+      background-image: url(img/m_limit_bg.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      overflow: hidden; }
+      #main .main-left .goodscont .m-ms .m-ms-left {
+        float: left;
+        font-size: 14px;
+        color: #fff;
+        line-height: 34px; }
+        #main .main-left .goodscont .m-ms .m-ms-left i {
+          font-size: 20px;
+          margin-left: 20px;
+          margin-right: 10px; }
+        #main .main-left .goodscont .m-ms .m-ms-left span {
+          font-size: 14px; }
+        #main .main-left .goodscont .m-ms .m-ms-left b {
+          font-weight: normal;
+          display: inline-block;
+          *display: block;
+          *zoom: 1;
+          width: 70px;
+          height: 20px;
+          font-size: 10px;
+          line-height: 20px;
+          text-align: center;
+          background: #fb9c00;
+          margin-left: 10px; }
+      #main .main-left .goodscont .m-ms .limit-tit-right {
+        float: right;
+        margin-right: 20px; }
+        #main .main-left .goodscont .m-ms .limit-tit-right b {
+          font-weight: normal;
+          font-size: 12px;
+          color: #ff5c0c;
+          float: left;
+          line-height: 34px;
+          margin-right: 6px; }
+        #main .main-left .goodscont .m-ms .limit-tit-right span {
+          display: inline-block;
+          float: left;
+          width: 16px;
+          height: 20px;
+          background: #464639;
+          text-align: center;
+          line-height: 20px;
+          color: #fff;
+          font-size: 12px;
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          -o-border-radius: 5px;
+          margin-top: 8px;
+          margin-left: 2px; }
+        #main .main-left .goodscont .m-ms .limit-tit-right i {
+          display: inline-block;
+          float: left;
+          width: 13px;
+          height: 16px;
+          margin-top: 8px;
+          text-align: center;
+        }
