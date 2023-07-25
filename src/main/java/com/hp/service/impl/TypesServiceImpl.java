@@ -35,4 +35,10 @@ public class TypesServiceImpl implements TypesService {
     public Types getById(Types types) {
         return typesMapper.getById(types);
     }
+
+    @Transactional
+    @Override
+    public int update(Types types) {
+        return typesMapper.update(types);
+    }
 }

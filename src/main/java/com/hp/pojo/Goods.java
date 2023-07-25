@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.List;
+
 @Data
 @ToString
 @AllArgsConstructor
@@ -14,10 +16,11 @@ public class Goods {
     private String cover;
     private String name;
     private String intro;
-    private  String spec;
+    private String spec;
     private Integer price;
     private Integer stock;
     private Integer sales;
     private String content;
     private Integer typeId;
+    private Types types;
 }

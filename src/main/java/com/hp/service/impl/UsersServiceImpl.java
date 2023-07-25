@@ -1,6 +1,5 @@
 package com.hp.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.hp.mapper.UsersMapper;
 import com.hp.pojo.Users;
 import com.hp.service.UsersService;
@@ -26,9 +25,10 @@ public class UsersServiceImpl implements UsersService {
     @Transactional
     @Override
     public int register(Users users) {
-        LambdaQueryWrapper<Users> lqw = new LambdaQueryWrapper<>();
-        LambdaQueryWrapper<Users> eq = lqw.eq(Users::getUsername, users.getUsername());
-        Users users1 = usersMapper.selectOne(eq);
+        if (users.getName() == null || users.getUsername() == null || users.getPassword() == null) {
+            return 3;
+        }
+        Users users1 = usersMapper.getByUsername(users);
 //        查出来由数据表示已经存在
         if (users1 != null) {
             return 3;

@@ -22,13 +22,11 @@ spring:
 #    prefix: classpath:/templates/
 #    suffix: .html
 #mybatis??
-mybatis-plus:
+mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
-  global-config:
-    db-config:
-      id-type: auto
+  type-aliases-package: com.hp.pojo;
 #spring????
 logging:
   level:

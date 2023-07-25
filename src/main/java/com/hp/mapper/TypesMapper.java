@@ -21,4 +21,6 @@ public interface TypesMapper {
 
     @Select("select  * from types where id=#{id}")
     Types getById(Types types);
+
+    int update(Types types);
 }

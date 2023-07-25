@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:fragment="myhead">
 <head>
-<meta charset="utf-8"/>
+    <meta charset="utf-8"/>
 </head>
 <body>
 
-	<nav class="navbar navbar-default" role="navigation" style="background-color:#fbf8ef;" th:fragment="header">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="redirect/index">后台首页</a>
-			</div>
-			<div>
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="typeList">类目管理</a></li>
-					<li><a href="goodList">商品管理</a></li>
-					<li><a href="orderList">订单管理</a></li>
-					<li><a href="userList">客户管理</a></li>
-					<li><a href="adminList">管理员</a></li>
-					<li><a href="logout">退出</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+<nav class="navbar navbar-default" role="navigation" style="background-color:#fbf8ef;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="redirect/index">后台首页</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <!--                class="active"-->
+                <li onclick="active(0)"><a href="typeList">类目管理</a></li>
+                <li onclick="active(1)"><a href="goodList">商品管理</a></li>
+                <li onclick="active(2)"><a href="orderList">订单管理</a></li>
+                <li onclick="active(3)"><a href="userList">客户管理</a></li>
+                <li onclick="active(4)"><a href="adminList">管理员</a></li>
+                <li onclick="active(5)"><a href="logout">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script>
+    const active = (a) => {
+        const index = a;
+        localStorage.setItem("index", index)
+    }
+    const li = document.querySelectorAll("li");
+    const indexto = localStorage.getItem("index")
+    if (indexto == null) {
+        li[0].classList = "active";
+    } else {
+        li[indexto].classList = "active";
+    }
+</script>
 </body>
 </html>

@@ -34,4 +34,12 @@ public interface TypesService {
      * @return
      */
     Types getById(Types types);
+
+    /**
+     * 修改类目表
+     *
+     * @param types
+     * @return
+     */
+    int update(Types types);
 }

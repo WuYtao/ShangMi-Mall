@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hp.mapper.GoodsMapper">
+    <resultMap id="goodsMap" type="goods">
+        <id column="id" property="id"/>
+        <result column="cover" property="cover"/>
+        <result column="name" property="name"/>
+        <result column="intro" property="intro"/>
+        <result column="spec" property="spec"/>
+        <result column="price" property="price"/>
+        <result column="stock" property="stock"/>
+        <result column="sales" property="sales"/>
+        <result column="content" property="content"/>
+        <result column="tyname" property="types.name"/>
+        <!--        <collection property="types" ofType="types">-->
+        <!--            <id column="id" property="id"/>-->
+        <!--            <result column="tyname" property="name"/>-->
+        <!--            <result column="num" property="num"/>-->
+        <!--        </collection>-->
+    </resultMap>
+    <select id="getAll" resultMap="goodsMap">
+        select a.*, t.name AS tyname
+        from goods a
+                 left join types t on a.type_id = t.id
+    </select>
+</mapper>
