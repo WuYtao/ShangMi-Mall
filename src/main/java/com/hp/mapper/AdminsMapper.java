@@ -8,4 +8,5 @@ import org.apache.ibatis.annotations.Select;
 public interface AdminsMapper {
     @Select("select * from admins where username=#{username} and password=#{password}")
     Admins login(Admins admins);
+
 }

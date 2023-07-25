@@ -24,7 +24,8 @@ public class AdminsLoginController {
     public String login(Admins admins, Model model) {
         Admins login = adminsService.login(admins);
         if (login != null) {
-            return "admin/index";
+            model.addAttribute("alogin", login);
+            return "redirect:/admin/typeList";
         }
         model.addAttribute("adminLogin", "账号或密码错误，请重新输入！");
         return "admin/login";

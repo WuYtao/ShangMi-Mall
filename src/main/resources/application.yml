@@ -3,7 +3,7 @@ spring:
   datasource:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/shangmimall?serverTimezone=UTC
+      url: jdbc:mysql://localhost:3306/hpshangmimall?serverTimezone=UTC
       username: root
       password: aM1ARI7dzqfZeAN671AyWlcuSDvR6os0jVQ7kJVHfMQ64k3t7GcuLna2wGovctxVd1rV/sWPk/f88owi06z72A==
       filters: config
