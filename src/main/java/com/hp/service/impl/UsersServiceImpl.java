@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class UsersServiceImpl implements UsersService {
     @Autowired
@@ -34,5 +36,15 @@ public class UsersServiceImpl implements UsersService {
             return 3;
         }
         return usersMapper.insert(users);
+    }
+
+    /**
+     * 返回全部员工信息
+     *
+     * @return
+     */
+    @Override
+    public List<Users> getAll() {
+        return usersMapper.getAll();
     }
 }

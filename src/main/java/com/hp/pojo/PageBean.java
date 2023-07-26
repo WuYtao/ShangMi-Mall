@@ -12,4 +12,10 @@ import java.util.List;
 public class PageBean {
     private Long total;
     private List rows;
+    private Long YeMaShu;
+
+    public PageBean(Long total, List rows) {
+        this.total = total;
+        this.rows = rows;
+    }
 }

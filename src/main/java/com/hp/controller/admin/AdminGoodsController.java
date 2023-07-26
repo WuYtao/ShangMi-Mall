@@ -21,6 +21,7 @@ public class AdminGoodsController {
         PageBean pageBean = goodsService.getAll(page, pageSize);
         model.addAttribute("Total", pageBean.getTotal());
         model.addAttribute("Rows", pageBean.getRows());
+
         return "admin/good_list";
     }
 }

@@ -1,64 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>管理员列表</title>
-	<meta charset="utf-8"/>
-	<link rel="stylesheet" href="/css/bootstrap.css"/>
+    <title>管理员列表</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="/css/bootstrap.css"/>
 </head>
 <body>
 <div class="container">
+    <div th:replace="~{admin/header.html::myhead}">
+    </div>
+    <div class="text-right"><a class="btn btn-warning" href="/admin/admin_add">添加管理员</a></div>
+    <br>
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th width="5%">ID</th>
+            <th width="10%">用户名</th>
+            <th width="10%">操作</th>
+        </tr>
+        <tr th:each="admin:${userList}">
+            <td><p th:text="${admin.id}">1</p></td>
+            <td><p th:text="${admin.username}">admin</p></td>
+            <td th:if="${admin.username}=='admin'">
+                <p>系统保护用户</p>
+            </td>
+            <td th:if="${admin.username}!='admin'">
+                <a class="btn btn-info"
+                   th:href="'admin_reset?id='+${admin.id}+'&username='+${admin.username}">
+                    重置密码</a>
+                <a class="btn btn-danger" th:href="'adminDelete?id='+${admin.id}">删除</a>
+            </td>
+        </tr>
+    </table>
 
-	
-	<div class="text-right"><a class="btn btn-warning" href="redirect/admin_add">添加管理员</a></div>
-		
-	<br>
-	
-	<table class="table table-bordered table-hover">
-
-		<tr>
-			<th width="5%">ID</th>
-			<th width="10%">用户名</th>
-			<th width="10%">操作</th>
-		</tr>
-		
-		
-			 <tr>
-				<td><p>1</p></td>
-				<td><p>admin</p></td>
-				<td>
-					<p>系统保护用户</p>
-					
-				</td>
-			</tr>
-		 
-			 <tr>
-				<td><p>2</p></td>
-				<td><p>777</p></td>
-				<td>
-					
-					
-						<a class="btn btn-info" href="admin_reset.jsp?id=2&username=777">重置密码</a>
-						<a class="btn btn-danger" href="adminDelete?id=2">删除</a>
-					
-				</td>
-			</tr>
-		 
-		 
-	</table>
-
-	<br>
-	<div style='text-align:center;'>
-		<a class='btn btn-info' disabled >首页</a>
-		<a class='btn btn-info' disabled >上一页</a>
-		<h2 style='display:inline;'>[1/1]</h2>
-		<h2 style='display:inline;'>[2]</h2>
-		<a class='btn btn-info' disabled >下一页</a>
-		<a class='btn btn-info' disabled >尾页</a>
-		<input type='text' class='form-control' style='display:inline;width:60px;' value=''/>
-		<a class='btn btn-info' href='javascript:void(0);' onclick='location.href="adminList?page="+(this.previousSibling.value)+""'>GO</a>
-	</div>
-	<br>
+    <br>
+    <div style='text-align:center;'>
+        <a class='btn btn-info' href="/admin/adminList?page=1">首页</a>
+        <a th:if="${page==1}" class='btn btn-info' disabled>上一页</a>
+        <a th:if="${page!=1}" class='btn btn-info' th:href="'adminList?page='+${upper}">上一页</a>
+        <h2 style='display:inline;' th:text="'['+${page}+'/'+${YeMaShu}+']'"></h2>
+        <h2 style='display:none;' id="YeMaShu" th:text="${YeMaShu}"></h2>
+        <h2 style='display:inline;' th:text="'['+${userListTotal}+']'">[2]</h2>
+        <a th:if="${page!=YeMaShu}" class='btn btn-info' th:href="'adminList?page='+${next}">下一页</a>
+        <a th:if="${page==YeMaShu}" class='btn btn-info' disabled>下一页</a>
+        <a class='btn btn-info' th:href="'adminList?page='+${YeMaShu}">尾页</a>
+        <input type='text' class='form-control' style='display:inline;width:60px;' value=''/>
+        <a class='btn btn-info' id="a">GO</a>
+    </div>
+    <br>
 </div>
+<script>
+    const a = document.querySelector("#a")
+    a.addEventListener('click', () => {
+        let input = document.querySelector(".form-control").value
+        let YeMaShu = document.querySelector("#YeMaShu").innerHTML
+        YeMaShu = parseInt(YeMaShu)
+        if (input < 0) {
+            input = 1;
+        }
+        if (input > YeMaShu) {
+            input = YeMaShu;
+        }
+        location.href = "adminList?page=" + input
+    })
+</script>
 </body>
 </html>
 
