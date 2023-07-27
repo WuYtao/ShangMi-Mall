@@ -58,52 +58,68 @@
 
     <br>
     <div style='text-align:center;'>
-        <a class='btn btn-info' disabled>首页</a>
-        <a class='btn btn-info' disabled>上一页</a>
-        <h2 style='display:inline;'>[1/8]</h2>
-        <h2 style='display:inline;'>[40]</h2>
-        <a class='btn btn-info' href='goodList?page=2'>下一页</a>
-        <a class='btn btn-info' href='goodList?page=8'>尾页</a>
+        <a class='btn btn-info' href="/admin/goodList?page=1">首页</a>
+        <a th:if="${page==1}" class='btn btn-info' disabled>上一页</a>
+        <a th:if="${page!=1}" class='btn btn-info' th:href="'goodList?page='+${upper}">上一页</a>
+        <h2 style='display:inline;' th:text="'['+${page}+'/'+${YeMaShu}+']'"></h2>
+        <h2 style='display:inline;' th:text="'['+${Total}+']'">[40]</h2>
+        <h2 style='display:none;' id="YeMaShu" th:text="${YeMaShu}"></h2>
+        <a th:if="${page!=YeMaShu}" class='btn btn-info' th:href="'goodList?page='+${next}">下一页</a>
+        <a th:if="${page==YeMaShu}" class='btn btn-info' disabled>下一页</a>
+        <a class='btn btn-info' th:href="'goodList?page='+${YeMaShu}">尾页</a>
         <input type='text' class='form-control' style='display:inline;width:60px;' value=''/>
-        <a class='btn btn-info' href='javascript:void(0);'
-           onclick='location.href="goodList?page="+(this.previousSibling.value)+""'>GO</a>
+        <a class='btn btn-info' id="a">GO</a>
     </div>
     <br>
 </div>
 
-
+<script>
+    const a = document.querySelector("#a")
+    a.addEventListener('click', () => {
+        let input = document.querySelector(".form-control").value
+        let YeMaShu = document.querySelector("#YeMaShu").innerHTML
+        YeMaShu = parseInt(YeMaShu)
+        if (input < 0) {
+            input = 1;
+        }
+        if (input > YeMaShu) {
+            input = YeMaShu;
+        }
+        location.href = "goodList?page=" + input
+    })
+</script>
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript">
-    $(function () {
-        $(document).on("click", ".topSave", function () {
-            var type = $(this).attr("type");
-            var goodId = $(this).attr("goodId");
-            var text = $(this).attr("text");
-            var old = $(this).text();
-            var obj = this;
-            $.post("topSave", {"goodId": goodId, "type": type}, function (data) {
-                if (data == "ok") {
-                    $(obj).text(text).attr("class", "btn btn-success topDelete").attr("text", old);
-                } else {
-                    alert("操作失败!");
-                }
-            }, "text");
-        });
-        $(document).on("click", ".topDelete", function () {
-            var type = $(this).attr("type");
-            var goodId = $(this).attr("goodId");
-            var text = $(this).attr("text");
-            var old = $(this).text();
-            var obj = this;
-            $.post("topDelete", {"goodId": goodId, "type": type}, function (data) {
-                if (data == "ok") {
-                    $(obj).text(text).attr("class", "btn btn-primary topSave").attr("text", old);
-                } else {
-                    alert("操作失败!");
-                }
-            }, "text");
-        });
-    });
+    // $(function () {
+    //     $(document).on("click", ".topSave", function () {
+    //         var type = $(this).attr("type");
+    //         var goodId = $(this).attr("goodId");
+    //         var text = $(this).attr("text");
+    //         var old = $(this).text();
+    //         var obj = this;
+    //         $.post("topSave", {"goodId": goodId, "type": type}, function (data) {
+    //             if (data == "ok") {
+    //                 $(obj).text(text).attr("class", "btn btn-success topDelete").attr("text", old);
+    //             } else {
+    //                 alert("操作失败!");
+    //             }
+    //         }, "text");
+    //     });
+    //     $(document).on("click", ".topDelete", function () {
+    //         var type = $(this).attr("type");
+    //         var goodId = $(this).attr("goodId");
+    //         var text = $(this).attr("text");
+    //         var old = $(this).text();
+    //         var obj = this;
+    //         $.post("topDelete", {"goodId": goodId, "type": type}, function (data) {
+    //             if (data == "ok") {
+    //                 $(obj).text(text).attr("class", "btn btn-primary topSave").attr("text", old);
+    //             } else {
+    //                 alert("操作失败!");
+    //             }
+    //         }, "text");
+    //     });
+    // });
 </script>
 </body>
 </html>

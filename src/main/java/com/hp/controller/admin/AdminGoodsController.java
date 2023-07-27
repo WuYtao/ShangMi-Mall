@@ -17,11 +17,15 @@ public class AdminGoodsController {
     private GoodsService goodsService;
 
     @GetMapping("goodList")
-    public String index(Integer page, Integer pageSize, Model model) {
-        PageBean pageBean = goodsService.getAll(page, pageSize);
+    public String index(Integer page, Model model) {
+        PageBean pageBean = goodsService.getAll(page);
+        int i = page == null ? 1 : page;
+        model.addAttribute("page", i);
         model.addAttribute("Total", pageBean.getTotal());
         model.addAttribute("Rows", pageBean.getRows());
-
+        model.addAttribute("YeMaShu", pageBean.getYeMaShu());
+        model.addAttribute("next", i + 1);
+        model.addAttribute("upper", i - 1);
         return "admin/good_list";
     }
 }

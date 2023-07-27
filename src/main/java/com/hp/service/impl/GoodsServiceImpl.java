@@ -17,10 +17,16 @@ public class GoodsServiceImpl implements GoodsService {
     private GoodsMapper goodsMapper;
 
     @Override
-    public PageBean getAll(Integer page, Integer pageSize) {
-        PageHelper.startPage(1, 5);
+    public PageBean getAll(Integer page) {
+        if (page == null) {
+            page = 1;
+        }
+        PageHelper.startPage(page, 5);
         List<Goods> all = goodsMapper.getAll();
         Page<Goods> p = (Page<Goods>) all;
-        return new PageBean(p.getTotal(), p.getResult());
+        long YeMa = p.getTotal() / 5;
+        if (p.getTotal() % 5 != 0)
+            YeMa++;
+        return new PageBean(p.getTotal(), p.getResult(), YeMa);
     }
 }
