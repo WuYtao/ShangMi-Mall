@@ -16,4 +16,5 @@ public class Items {
     private Integer amount;
     private Integer orderId;
     private Integer goodId;
+    private String goods_name;
 }

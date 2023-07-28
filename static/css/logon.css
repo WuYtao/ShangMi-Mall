@@ -33,7 +33,7 @@
   width: 100%;
   height: auto;
   background: #ff0000;
-  background: url(../img/backimg.png) no-repeat;
+  background: url(backimg.png) no-repeat;
   background-size: cover;
   padding: 50px 0 50px 0;
   box-sizing: border-box;

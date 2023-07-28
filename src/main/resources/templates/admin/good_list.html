@@ -12,8 +12,8 @@
     <div class="text-right"><a class="btn btn-warning" href="goodAdd">添加商品</a></div>
     <br>
     <ul role="tablist" class="nav nav-tabs">
-        <li class="active" role="presentation"><a href="goodList">全部商品</a></li>
-        <li role="presentation"><a href="goodList?type=1">今日推荐</a></li>
+        <li class="myLi" onclick="myActive(0)" role="presentation"><a href="goodList">全部商品</a></li>
+        <li class="myLi" onclick="myActive(1)" role="presentation"><a href="goodList?type=1">今日推荐</a></li>
     </ul>
     <br>
     <table class="table table-bordered table-hover">
@@ -48,17 +48,22 @@
             <td><p th:text="${goods.sales}"></p></td>
             <td>
                 <p>
-                    <a class="btn btn-success topDelete" href="javascript:;" type="1" goodId="1" text="加入今日推荐">移出今日推荐</a>
+                    <a class="btn btn-success topDelete" th:href="'topsr?good_id='+${goods.id}"
+                       th:if="${goods.tops!=null}"
+                       th:text="'移出今日推荐'"></a>
+                    <a class="btn btn-success topDelete" th:href="'topsad?good_id='+${goods.id}"
+                       th:if="${goods.tops==null}"
+                       th:text="'加入今日推荐'"></a>
                 </p>
-                <a class="btn btn-info" href="goodEdit?id=1">修改</a>
-                <a class="btn btn-danger" href="goodDelete?id=1">删除</a>
+                <a class="btn btn-info" th:href="'goodEdit?id='+${goods.id}">修改</a>
+                <a class="btn btn-danger" th:href="'goodDelete?id='+${goods.id}">删除</a>
             </td>
         </tr>
     </table>
-
     <br>
     <div style='text-align:center;'>
-        <a class='btn btn-info' href="/admin/goodList?page=1">首页</a>
+        <a class='btn btn-info' th:if="${ok!=null}" href="/admin/goodList?page=1&type=1">首页</a>
+        <a class='btn btn-info' th:if="${ok==null}" href="/admin/goodList?page=1">首页</a>
         <a th:if="${page==1}" class='btn btn-info' disabled>上一页</a>
         <a th:if="${page!=1}" class='btn btn-info' th:href="'goodList?page='+${upper}">上一页</a>
         <h2 style='display:inline;' th:text="'['+${page}+'/'+${YeMaShu}+']'"></h2>
@@ -66,7 +71,8 @@
         <h2 style='display:none;' id="YeMaShu" th:text="${YeMaShu}"></h2>
         <a th:if="${page!=YeMaShu}" class='btn btn-info' th:href="'goodList?page='+${next}">下一页</a>
         <a th:if="${page==YeMaShu}" class='btn btn-info' disabled>下一页</a>
-        <a class='btn btn-info' th:href="'goodList?page='+${YeMaShu}">尾页</a>
+        <a class='btn btn-info' th:if="${ok!=null}" th:href="'goodList?page='+${YeMaShu}+'&type=1'">尾页</a>
+        <a class='btn btn-info' th:if="${ok==null}" th:href="'goodList?page='+${YeMaShu}">尾页</a>
         <input type='text' class='form-control' style='display:inline;width:60px;' value=''/>
         <a class='btn btn-info' id="a">GO</a>
     </div>
@@ -74,6 +80,16 @@
 </div>
 
 <script>
+    const myActive = (a = 0) => {
+        localStorage.setItem("myIndex", a)
+    }
+    const myLi = document.querySelectorAll(".myLi");
+    const myIndex = localStorage.getItem("myIndex")
+    if (indexto == null) {
+        myLi[0].classList = "active";
+    } else {
+        myLi[myIndex].classList = "active";
+    }
     const a = document.querySelector("#a")
     a.addEventListener('click', () => {
         let input = document.querySelector(".form-control").value
@@ -87,39 +103,6 @@
         }
         location.href = "goodList?page=" + input
     })
-</script>
-<script type="text/javascript" src="/js/jquery.js"></script>
-<script type="text/javascript">
-    // $(function () {
-    //     $(document).on("click", ".topSave", function () {
-    //         var type = $(this).attr("type");
-    //         var goodId = $(this).attr("goodId");
-    //         var text = $(this).attr("text");
-    //         var old = $(this).text();
-    //         var obj = this;
-    //         $.post("topSave", {"goodId": goodId, "type": type}, function (data) {
-    //             if (data == "ok") {
-    //                 $(obj).text(text).attr("class", "btn btn-success topDelete").attr("text", old);
-    //             } else {
-    //                 alert("操作失败!");
-    //             }
-    //         }, "text");
-    //     });
-    //     $(document).on("click", ".topDelete", function () {
-    //         var type = $(this).attr("type");
-    //         var goodId = $(this).attr("goodId");
-    //         var text = $(this).attr("text");
-    //         var old = $(this).text();
-    //         var obj = this;
-    //         $.post("topDelete", {"goodId": goodId, "type": type}, function (data) {
-    //             if (data == "ok") {
-    //                 $(obj).text(text).attr("class", "btn btn-primary topSave").attr("text", old);
-    //             } else {
-    //                 alert("操作失败!");
-    //             }
-    //         }, "text");
-    //     });
-    // });
 </script>
 </body>
 </html>

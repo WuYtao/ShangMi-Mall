@@ -1,5 +1,6 @@
 package com.hp.service;
 
+import com.hp.pojo.PageBean;
 import com.hp.pojo.Users;
 
 import java.util.List;
@@ -9,6 +10,6 @@ public interface UsersService {
 
     int register(Users users);
 
-    List<Users> getAll();
+    PageBean getAll(Integer page);
 
 }

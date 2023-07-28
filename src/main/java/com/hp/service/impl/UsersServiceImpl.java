@@ -1,6 +1,10 @@
 package com.hp.service.impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.hp.mapper.UsersMapper;
+import com.hp.pojo.Goods;
+import com.hp.pojo.PageBean;
 import com.hp.pojo.Users;
 import com.hp.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +48,16 @@ public class UsersServiceImpl implements UsersService {
      * @return
      */
     @Override
-    public List<Users> getAll() {
-        return usersMapper.getAll();
+    public PageBean getAll(Integer page) {
+        if (page == null) {
+            page = 1;
+        }
+        PageHelper.startPage(page, 5);
+        List<Users> all = usersMapper.getAll();
+        Page<Users> p = (Page<Users>) all;
+        long YeMa = p.getTotal() / 5;
+        if (p.getTotal() % 5 != 0)
+            YeMa++;
+        return new PageBean(p.getTotal(), p.getResult(), YeMa);
     }
 }

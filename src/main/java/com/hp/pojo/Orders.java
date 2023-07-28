@@ -5,7 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 
 @Data
@@ -21,6 +23,8 @@ public class Orders {
     private String name;
     private String phone;
     private String address;
-    private Date systime;
+    private LocalDateTime systime;
     private Integer userId;
+    private String username;
+    private List<Items> itemsList;
 }

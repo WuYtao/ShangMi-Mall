@@ -29,7 +29,7 @@ body {background: #fbf8ef; }
       top: 0;
       right: 0;
       z-index: 3;
-      background-image: url("../img/m_ys.png");
+      background-image: url("m_ys.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover; }
@@ -40,7 +40,7 @@ body {background: #fbf8ef; }
       top: 0;
       right: 0;
       z-index: 3;
-      background-image: url("../img/m_xp.png");
+      background-image: url("m_xp.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover; }
@@ -64,7 +64,7 @@ body {background: #fbf8ef; }
       right: 0;
       top: 0;
       z-index: 3;
-      background: url("../img/m_limit_tip.png") no-repeat; }
+      background: url("m_limit_tip.png") no-repeat; }
       .goods-box .goods .bq p {
         height: 18px;
         line-height: 18px; }
@@ -1084,7 +1084,7 @@ body {background: #fbf8ef; }
           position: absolute;
           top: -10px;
           right: 0;
-          background-image: url("../img/m_ys.png");
+          background-image: url("m_ys.png");
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover; }
@@ -1094,7 +1094,7 @@ body {background: #fbf8ef; }
           position: absolute;
           top: -10px;
           right: 0;
-          background-image: url("../img/m_xp.png");
+          background-image: url("m_xp.png");
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover; }
@@ -1174,7 +1174,7 @@ body {background: #fbf8ef; }
       top: 10px;
       left: 10px;
       z-index: 3;
-      background-image: url("../img/m_top_4.png");
+      background-image: url("m_top_4.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -1188,7 +1188,7 @@ body {background: #fbf8ef; }
       position: absolute;
       top: 10px;
       right: 10px;
-      background-image: url("../img/m_ys.png");
+      background-image: url("m_ys.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover; }
@@ -1198,7 +1198,7 @@ body {background: #fbf8ef; }
       position: absolute;
       top: 10px;
       right: 10px;
-      background-image: url("../img/m_xp.png");
+      background-image: url("m_xp.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover; }
@@ -1293,7 +1293,7 @@ body {background: #fbf8ef; }
             top: 0;
             right: 0;
             z-index: 3;
-            background-image: url("../img/m_ys.png");
+            background-image: url("m_ys.png");
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover; }
@@ -1304,7 +1304,7 @@ body {background: #fbf8ef; }
             top: 0;
             right: 0;
             z-index: 3;
-            background-image: url("../img/m_xp.png");
+            background-image: url("m_xp.png");
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover; }
@@ -1598,7 +1598,7 @@ body {background: #fbf8ef; }
 			top: 0;
 			left: 0;
 			z-index: 3;
-			background-image: url("../img/pc_de7yuan.png");
+			background-image: url("pc_de7yuan.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -1610,7 +1610,7 @@ body {background: #fbf8ef; }
 			top: 0;
 			left: 0;
 			z-index: 3;
-			background-image: url("../img/pc_de5.png");
+			background-image: url("pc_de5.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -1622,7 +1622,7 @@ body {background: #fbf8ef; }
 			top: 0;
 			left: 0;
 			z-index: 3;
-			background-image: url("../img/pc_de6.png");
+			background-image: url("pc_de6.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -1634,7 +1634,7 @@ body {background: #fbf8ef; }
 			top: 0;
 			left: 0;
 			z-index: 3;
-			background-image: url("../img/pc_de7.png");
+			background-image: url("pc_de7.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -1646,7 +1646,7 @@ body {background: #fbf8ef; }
 			top: 0;
 			left: 0;
 			z-index: 3;
-			background-image: url("../img/pc_de8.png");
+			background-image: url("pc_de8.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -1658,7 +1658,7 @@ body {background: #fbf8ef; }
 			top: 0;
 			left: 0;
 			z-index: 3;
-			background-image: url("../img/pc_de9.png");
+			background-image: url("pc_de9.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -1684,7 +1684,7 @@ body {background: #fbf8ef; }
 			top: 0;
 			left: 0;
 			z-index: 3;
-			background-image: url("../img/pc_de7yuan.png");
+			background-image: url("pc_de7yuan.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -1696,7 +1696,7 @@ body {background: #fbf8ef; }
 			top: 0;
 			left: 0;
 			z-index: 3;
-			background-image: url("../img/pc_de5.png");
+			background-image: url("pc_de5.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -1708,7 +1708,7 @@ body {background: #fbf8ef; }
 			top: 0;
 			left: 0;
 			z-index: 3;
-			background-image: url("../img/pc_de6.png");
+			background-image: url("pc_de6.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -1720,7 +1720,7 @@ body {background: #fbf8ef; }
 			top: 0;
 			left: 0;
 			z-index: 3;
-			background-image: url("../img/pc_de7.png");
+			background-image: url("pc_de7.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -1732,7 +1732,7 @@ body {background: #fbf8ef; }
 			top: 0;
 			left: 0;
 			z-index: 3;
-			background-image: url("../img/pc_de8.png");
+			background-image: url("pc_de8.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -1744,7 +1744,7 @@ body {background: #fbf8ef; }
 			top: 0;
 			left: 0;
 			z-index: 3;
-			background-image: url("../img/pc_de9.png");
+			background-image: url("pc_de9.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;

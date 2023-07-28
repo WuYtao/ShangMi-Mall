@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hp.mapper.OrdersMapper">
+    <!--    <resultMap id="ordersMap" type="orders">-->
+    <!--        <id column="id" property="id"/>-->
+    <!--        <result column="total" property="total"/>-->
+    <!--        <result column="amount" property="amount"/>-->
+    <!--        <result column="status" property="status"/>-->
+    <!--        <result column="paytype" property="paytype"/>-->
+    <!--        <result column="name" property="name"/>-->
+    <!--        <result column="phone" property="phone"/>-->
+    <!--        <result column="address" property="address"/>-->
+    <!--        <result column="systime" property="systime"/>-->
+    <!--        <result column="user_id" property="userId"/>-->
+    <!--        <collection property="itemsList" ofType="items">-->
+    <!--            <id column="order_id" property="id"/>-->
+    <!--            <result column="price" property="price"/>-->
+    <!--&lt;!&ndash;            <result column="items_amount" property="amount"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;            <result column="goods_name" property="goods_name"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;            <result column="username" property="username"/>&ndash;&gt;-->
+    <!--        </collection>-->
+    <!--    </resultMap>-->
+    <resultMap id="ordersMap" type="orders">
+        <id column="id" property="id"/>
+        <result column="total" property="total"/>
+        <result column="amount" property="amount"/>
+        <result column="status" property="status"/>
+        <result column="paytype" property="paytype"/>
+        <result column="name" property="name"/>
+        <result column="phone" property="phone"/>
+        <result column="address" property="address"/>
+        <result column="systime" property="systime"/>
+        <result column="user_id" property="userId"/>
+        <result column="username" property="username"/>
+        <collection property="itemsList" ofType="items" column="id" select="getAllBy">
+        </collection>
+    </resultMap>
+    <resultMap id="itemsMap" type="items">
+        <id column="id" property="id"/>
+        <result column="price" property="price"/>
+        <result column="amount" property="amount"/>
+        <result column="goodsName" property="goods_name"/>
+    </resultMap>
+
+    <select id="getAll" resultMap="ordersMap">
+        select o.*, u.username
+        from orders o
+                 left join users u on o.user_id = u.id
+    </select>
+    <select id="getAllBy" resultMap="itemsMap">
+        select a.*, b.name AS goodsName
+        from (select *
+              from items
+              where order_id = #{id}) a
+                 left join goods b on a.good_id = b.id
+    </select>
+
+    <select id="getAllUsername" resultMap="ordersMap">
+        select *
+        from orders
+    </select>
+</mapper>

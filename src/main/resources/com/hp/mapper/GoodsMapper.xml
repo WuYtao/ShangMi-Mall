@@ -13,16 +13,68 @@
         <result column="stock" property="stock"/>
         <result column="sales" property="sales"/>
         <result column="content" property="content"/>
+        <result column="type_id" property="typeId"/>
         <result column="tyname" property="types.name"/>
         <!--        <collection property="types" ofType="types">-->
         <!--            <id column="id" property="id"/>-->
         <!--            <result column="tyname" property="name"/>-->
         <!--            <result column="num" property="num"/>-->
         <!--        </collection>-->
+        <result column="topsId" property="tops.id"/>
+        <result column="ty" property="tops.type"/>
     </resultMap>
+
     <select id="getAll" resultMap="goodsMap">
-        select a.*, t.name AS tyname
+        select c.*, d.type As ty, d.id AS topsId
+        from (select a.*, t.name AS tyname, t.id AS tId
         from goods a
-                 left join types t on a.type_id = t.id
+        left join types t on a.type_id = t.id)c
+        <if test="type != null and type !=''">
+            inner join
+        </if>
+        <if test="type == null">
+            left join
+        </if>
+        tops d on c.id = d.good_id
     </select>
+
+    <update id="Upload">
+        update goods
+        <set>
+            <if test="cover != null and cover !=''">
+                cover = #{cover},
+            </if>
+            <if test="name != null and name !=''">
+                name = #{name},
+            </if>
+            <if test="intro != null and intro !=''">
+                intro = #{intro},
+            </if>
+            <if test="spec != null and spec !=''">
+                spec = #{spec},
+            </if>
+            <if test="price != null and price !=''">
+                price = #{price},
+            </if>
+            <if test="stock != null and stock !=''">
+                stock = #{stock},
+            </if>
+            <if test="sales != null and sales !=''">
+                sales = #{sales},
+            </if>
+            <if test="content != null and content !=''">
+                content = #{content},
+            </if>
+            <if test="typeId != null and typeId !=''">
+                type_id = #{typeId}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <insert id="insert">
+        insert into goods(cover, name, intro, spec, price, stock, content, type_id)
+        VALUES (#{cover}, #{name}, #{intro}, #{spec}, #{price}, #{stock}, #{content}, #{typeId})
+    </insert>
+
 </mapper>

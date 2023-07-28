@@ -1,109 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>客户列表</title>
-<meta charset="utf-8"/>
-<link rel="stylesheet" href="/css/bootstrap.css"/>
+    <title>客户列表</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="/css/bootstrap.css"/>
 </head>
 <body>
 <div class="container">
+    <div th:replace="~{admin/header.html::myhead}"></div>
+    <div class="text-right"><a class="btn btn-warning" th:href="'/admin/user_add'">添加客户</a></div>
+    <br>
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th width="5%">ID</th>
+            <th width="5%">用户</th>
+            <th width="10%">姓名</th>
+            <th width="10%">电话</th>
+            <th width="10%">地址</th>
+            <th width="15%">操作</th>
+        </tr>
 
-	
-	<div class="text-right"><a class="btn btn-warning" href="redirect/user_add">添加客户</a></div>
-		
-	<br>
-	
-	<table class="table table-bordered table-hover">
+        <tr th:each="user:${userList}">
+            <td><p th:text="${user.id}">1</p></td>
+            <td><p th:text="${user.username}">user</p></td>
+            <td><p th:text="${user.name}">华丽</p></td>
+            <td><p th:text="${user.phone}">123456789</p></td>
+            <td><p th:text="${user.address}">湖南浦东新区</p></td>
+            <td>
+                <a class="btn btn-info"
+                   href="user_reset.jsp?id=1&username=user&password=HAMVRZRssPCADKqGjGWJtQ==">重置密码</a>
+                <a class="btn btn-primary" href="userEdit?id=1">修改</a>
+                <a class="btn btn-danger" href="userDelete?id=1">删除</a>
+            </td>
+        </tr>
+    </table>
 
-	<tr>
-		<th width="5%">ID</th>
-		<th width="5%">用户</th>
-		<th width="10%">姓名</th>
-		<th width="10%">电话</th>
-		<th width="10%">地址</th>
-		<th width="15%">操作</th>
-	</tr>
-	
-		<tr>
-         	<td><p>1</p></td>
-         	<td><p>user</p></td>
-         	<td><p>华丽</p></td>
-         	<td><p>123456789</p></td>
-         	<td><p>湖南浦东新区</p></td>
-			<td>
-				<a class="btn btn-info" href="user_reset.jsp?id=1&username=user&password=HAMVRZRssPCADKqGjGWJtQ==">重置密码</a>
-				<a class="btn btn-primary" href="userEdit?id=1">修改</a>
-				<a class="btn btn-danger" href="userDelete?id=1">删除</a>
-			</td>
-       	</tr>
-     
-         <tr>
-         	<td><p>2</p></td>
-         	<td><p>77</p></td>
-         	<td><p>小宝宝</p></td>
-         	<td><p>12315</p></td>
-         	<td><p>黑龙江漠河</p></td>
-			<td>
-				<a class="btn btn-info" href="user_reset.jsp?id=2&username=77&password=h1OIcgSG6ZNcQ+5L4t4e1A==">重置密码</a>
-				<a class="btn btn-primary" href="userEdit?id=2">修改</a>
-				<a class="btn btn-danger" href="userDelete?id=2">删除</a>
-			</td>
-       	</tr>
-     
-         <tr>
-         	<td><p>3</p></td>
-         	<td><p>88</p></td>
-         	<td><p>大宝贝</p></td>
-         	<td><p>10010</p></td>
-         	<td><p>海南西沙群岛</p></td>
-			<td>
-				<a class="btn btn-info" href="user_reset.jsp?id=3&username=88&password=Dz/ttH/0ChuqFBRze9alpw==">重置密码</a>
-				<a class="btn btn-primary" href="userEdit?id=3">修改</a>
-				<a class="btn btn-danger" href="userDelete?id=3">删除</a>
-			</td>
-       	</tr>
-     
-         <tr>
-         	<td><p>4</p></td>
-         	<td><p>99</p></td>
-         	<td><p>哈哈哈</p></td>
-         	<td><p>10086</p></td>
-         	<td><p>新疆阿拉善</p></td>
-			<td>
-				<a class="btn btn-info" href="user_reset.jsp?id=4&username=99&password=cMdK4vKHu03eruGlpzU4VQ==">重置密码</a>
-				<a class="btn btn-primary" href="userEdit?id=4">修改</a>
-				<a class="btn btn-danger" href="userDelete?id=4">删除</a>
-			</td>
-       	</tr>
-     
-         <tr>
-         	<td><p>5</p></td>
-         	<td><p>zhangsan</p></td>
-         	<td><p>张三</p></td>
-         	<td><p>13311112222</p></td>
-         	<td><p>aaa</p></td>
-			<td>
-				<a class="btn btn-info" href="user_reset.jsp?id=5&username=zhangsan&password=HAMVRZRssPCADKqGjGWJtQ==">重置密码</a>
-				<a class="btn btn-primary" href="userEdit?id=5">修改</a>
-				<a class="btn btn-danger" href="userDelete?id=5">删除</a>
-			</td>
-       	</tr>
-     
-     
-	</table>
-
-	<br>
-	<div style='text-align:center;'>
-		<a class='btn btn-info' disabled >首页</a>
-		<a class='btn btn-info' disabled >上一页</a>
-		<h2 style='display:inline;'>[1/1]</h2>
-		<h2 style='display:inline;'>[5]</h2>
-		<a class='btn btn-info' disabled >下一页</a>
-		<a class='btn btn-info' disabled >尾页</a>
-		<input type='text' class='form-control' style='display:inline;width:60px;' value=''/>
-		<a class='btn btn-info' href='javascript:void(0);' onclick='location.href="userList?page="+(this.previousSibling.value)+""'>GO</a>
-	</div>
-	<br>
+    <br>
+    <div style='text-align:center;'>
+        <a class='btn btn-info' href='userList?page=1'>首页</a>
+        <a th:if="${page==1}" class='btn btn-info' disabled>上一页</a>
+        <a th:if="${page!=1}" class='btn btn-info' th:href="'userList?page='+${upper}">上一页</a>
+        <h2 style='display:inline;' th:text="'['+${page}+'/'+${YeMaShu}+']'"></h2>
+        <h2 style='display:inline;' th:text="'['+${Total}+']'">[40]</h2>
+        <h2 style='display:none;' id="YeMaShu" th:text="${YeMaShu}"></h2>
+        <a th:if="${page!=YeMaShu}" class='btn btn-info' th:href="'userList?page='+${next}">下一页</a>
+        <a th:if="${page==YeMaShu}" class='btn btn-info' disabled>下一页</a>
+        <a class='btn btn-info' th:href="'userList?page='+${YeMaShu}">尾页</a>
+        <input type='text' class='form-control' style='display:inline;width:60px;' value=''/>
+        <a class='btn btn-info' id="a">GO</a>
+    </div>
+    <br>
 </div>
+<script>
+    const a = document.querySelector("#a")
+    a.addEventListener('click', () => {
+        let input = document.querySelector(".form-control").value
+        let YeMaShu = document.querySelector("#YeMaShu").innerHTML
+        YeMaShu = parseInt(YeMaShu)
+        if (input < 0) {
+            input = 1;
+        }
+        if (input > YeMaShu) {
+            input = YeMaShu;
+        }
+        location.href = "userList?page=" + input
+    })
+</script>
 </body>
 </html>

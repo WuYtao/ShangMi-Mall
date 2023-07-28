@@ -440,7 +440,7 @@ body{
       top: 0;
       right: 0;
       z-index: 3;
-      background-image: url("../img/m_ys.png");
+      background-image: url("m_ys.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover; }
@@ -451,7 +451,7 @@ body{
       top: 0;
       right: 0;
       z-index: 3;
-      background-image: url("../img/m_xp.png");
+      background-image: url("m_xp.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover; }
@@ -475,7 +475,7 @@ body{
       right: 0;
       top: 0;
       z-index: 3;
-      background: url("../img/m_limit_tip.png") no-repeat; }
+      background: url("m_limit_tip.png") no-repeat; }
       .goods-box .goods .bq p {
         height: 18px;
         line-height: 18px; }
