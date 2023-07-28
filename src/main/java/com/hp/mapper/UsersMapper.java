@@ -1,6 +1,7 @@
 package com.hp.mapper;
 
 import com.hp.pojo.Users;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -17,6 +18,13 @@ public interface UsersMapper {
     @Insert("insert into users(username, password, name, phone, address) values" +
             " (#{username},#{password},#{name},#{phone},#{address})")
     int insert(Users users);
+
     @Select("select * from users")
     List<Users> getAll();
+
+    @Delete("delete from users where id=#{id}")
+    int delete(Users users);
+
+    @Select("select * from users where id=#{id}")
+    Users getById(Users users);
 }

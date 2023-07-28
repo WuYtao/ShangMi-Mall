@@ -28,9 +28,9 @@
             <td><p th:text="${user.address}">湖南浦东新区</p></td>
             <td>
                 <a class="btn btn-info"
-                   href="user_reset.jsp?id=1&username=user&password=HAMVRZRssPCADKqGjGWJtQ==">重置密码</a>
-                <a class="btn btn-primary" href="userEdit?id=1">修改</a>
-                <a class="btn btn-danger" href="userDelete?id=1">删除</a>
+                   href="user_reset?id=1&username=user&password=HAMVRZRssPCADKqGjGWJtQ==">重置密码</a>
+                <a class="btn btn-primary" th:href="'userEdit?id='+${user.id}">修改</a>
+                <a class="btn btn-danger" th:href="'userDelete?id='+${user.id}">删除</a>
             </td>
         </tr>
     </table>

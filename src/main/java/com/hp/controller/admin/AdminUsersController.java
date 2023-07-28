@@ -41,4 +41,18 @@ public class AdminUsersController {
         int register = usersService.register(users);
         return "redirect:userList";
     }
+
+    @GetMapping("userDelete")
+    public String userDelete(Users users) {
+        int delete = usersService.delete(users);
+        return "redirect:userList";
+    }
+
+    @GetMapping("userEdit")
+    public String userEdit(Users users, Model model) {
+        Users byId = usersService.getById(users);
+        model.addAttribute("users", byId);
+        return "admin/user_edit";
+    }
+
 }

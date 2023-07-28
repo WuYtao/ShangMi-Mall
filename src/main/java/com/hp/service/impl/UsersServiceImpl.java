@@ -60,4 +60,15 @@ public class UsersServiceImpl implements UsersService {
             YeMa++;
         return new PageBean(p.getTotal(), p.getResult(), YeMa);
     }
+
+    @Transactional
+    @Override
+    public int delete(Users users) {
+        return usersMapper.delete(users);
+    }
+
+    @Override
+    public Users getById(Users users) {
+        return usersMapper.getById(users);
+    }
 }
