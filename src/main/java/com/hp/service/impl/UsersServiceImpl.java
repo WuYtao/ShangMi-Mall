@@ -71,4 +71,19 @@ public class UsersServiceImpl implements UsersService {
     public Users getById(Users users) {
         return usersMapper.getById(users);
     }
+
+    @Transactional
+    @Override
+    public int userReset(Users users) {
+        if (users.getPassword() == null) {
+            return 0;
+        }
+        return usersMapper.userReset(users);
+    }
+
+    @Transactional
+    @Override
+    public int userUpdate(Users users) {
+        return usersMapper.userUpdate(users);
+    }
 }

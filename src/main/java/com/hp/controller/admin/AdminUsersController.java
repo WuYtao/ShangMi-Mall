@@ -55,4 +55,22 @@ public class AdminUsersController {
         return "admin/user_edit";
     }
 
+    @PostMapping("userUpdate")
+    public String userUpdate(Users users) {
+        int i = usersService.userUpdate(users);
+        return "redirect:userList";
+    }
+
+    @GetMapping("user_reset")
+    public String user_reset(Users users, Model model) {
+        Users byId = usersService.getById(users);
+        model.addAttribute("usersBy", byId);
+        return "admin/user_reset";
+    }
+
+    @PostMapping("userReset")
+    public String userReset(Users users) {
+        int i = usersService.userReset(users);
+        return "redirect:userList";
+    }
 }

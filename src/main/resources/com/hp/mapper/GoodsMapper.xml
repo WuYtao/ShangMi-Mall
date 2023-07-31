@@ -37,7 +37,6 @@
         </if>
         tops d on c.id = d.good_id
     </select>
-
     <update id="Upload">
         update goods
         <set>
@@ -77,4 +76,28 @@
         VALUES (#{cover}, #{name}, #{intro}, #{spec}, #{price}, #{stock}, #{content}, #{typeId})
     </insert>
 
+    <select id="getByLimit" resultType="com.hp.pojo.Goods">
+        select *
+        from goods
+                 inner join tops t on goods.id = t.good_id
+        limit 0,6
+    </select>
+    <select id="getSalesF" resultType="com.hp.pojo.Goods">
+        select *
+        from goods
+        order by sales DESC
+        limit 0,3
+    </select>
+
+    <select id="getSalesG" resultType="com.hp.pojo.Goods">
+        select *
+        from goods
+        order by sales DESC
+        limit 3,5
+    </select>
+    <select id="getByTypeId" resultType="com.hp.pojo.Goods">
+        select *
+        from goods
+        where type_id = #{type_id};
+    </select>
 </mapper>

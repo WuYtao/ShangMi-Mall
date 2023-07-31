@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GoodsServiceImpl implements GoodsService {
@@ -59,5 +60,25 @@ public class GoodsServiceImpl implements GoodsService {
             return 0;
         }
         return goodsMapper.insert(goods);
+    }
+
+    @Override
+    public List<Goods> getByLimit() {
+        return goodsMapper.getByLimit();
+    }
+
+    @Override
+    public List<Goods> getSalesF() {
+        return goodsMapper.getSalesF();
+    }
+
+    @Override
+    public List<Goods> getSalesG() {
+        return goodsMapper.getSalesG();
+    }
+
+    @Override
+    public List<Goods> getByTypeId(Integer type_id) {
+        return goodsMapper.getByTypeId(type_id);
     }
 }

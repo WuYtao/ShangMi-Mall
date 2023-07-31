@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("admin")
 public class AdminsLoginController {
@@ -22,13 +24,19 @@ public class AdminsLoginController {
     }
 
     @PostMapping("login")
-    public String login(Admins admins, Model model) {
+    public String login(Admins admins, Model model, HttpSession session) {
         Admins login = adminsService.login(admins);
         if (login != null) {
-            model.addAttribute("alogin", login);
+            session.setAttribute("alog", login);
             return "redirect:/admin/typeList";
         }
         model.addAttribute("adminLogin", "账号或密码错误，请重新输入！");
+        return "admin/login";
+    }
+
+    @GetMapping("logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("alog");
         return "admin/login";
     }
 }

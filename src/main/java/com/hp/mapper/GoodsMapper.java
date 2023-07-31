@@ -20,4 +20,12 @@ public interface GoodsMapper {
     int deleteById(Goods goods);
 
     int insert(Goods goods);
+
+    List<Goods> getByLimit();
+
+    List<Goods> getSalesF();
+
+    List<Goods> getSalesG();
+
+    List<Goods> getByTypeId(Integer type_id);
 }
