@@ -10,6 +10,7 @@ import com.hp.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.DigestUtils;
 
 import java.util.List;
 
@@ -20,6 +21,9 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public Users login(Users users) {
+        String password = users.getPassword();
+        //md5加密
+        users.setPassword(DigestUtils.md5DigestAsHex(password.getBytes()));
         return usersMapper.login(users);
     }
 
@@ -34,6 +38,9 @@ public class UsersServiceImpl implements UsersService {
         if (users.getName() == null || users.getUsername() == null || users.getPassword() == null) {
             return 3;
         }
+        String password = users.getPassword();
+        //md5加密
+        users.setPassword(DigestUtils.md5DigestAsHex(password.getBytes()));
         Users users1 = usersMapper.getByUsername(users);
 //        查出来由数据表示已经存在
         if (users1 != null) {

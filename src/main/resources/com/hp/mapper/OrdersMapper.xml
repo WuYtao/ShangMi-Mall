@@ -23,15 +23,20 @@
         <result column="price" property="price"/>
         <result column="amount" property="amount"/>
         <result column="goodsName" property="goods_name"/>
+        <result column="cover" property="cover"/>
     </resultMap>
 
     <select id="getAll" resultMap="ordersMap">
         select o.*, u.username
         from orders o
-                 left join users u on o.user_id = u.id
+        left join users u on o.user_id = u.id
+        <if test="username != null and username !=''">
+            where u.username = #{username}
+        </if>
     </select>
+
     <select id="getAllBy" resultMap="itemsMap">
-        select a.*, b.name AS goodsName
+        select a.*, b.name AS goodsName, b.cover
         from (select *
               from items
               where order_id = #{id}) a
@@ -42,4 +47,6 @@
         select *
         from orders
     </select>
+
+
 </mapper>

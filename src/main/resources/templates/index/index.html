@@ -124,191 +124,27 @@
         <div class="main-box">
             <div class="m-swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="goods-box">
+                    <div class="swiper-slide" th:each="goodList:${arrayList1}">
+                        <div class="goods-box" th:each="goods:${goodList}">
                             <div class="goods">
-                                <a href="detail?id=41">
+                                <a th:href="|detail?id=${goods.id}|">
                                     <div class="img-box">
-                                        <img src="../upload/20211019164357665.jpg">
+                                        <img th:src="${goods.cover}">
                                     </div>
                                 </a>
-                                <a href="detail?id=41">
-                                    <p class="goodsname">辣狗</p>
+                                <a th:href="|detail?id=${goods.id}|">
+                                    <div></div>
+                                    <p class="goodsname" th:text="${goods.name}"></p>
                                 </a>
-                                <p class="goods-descript">不错的狗子</p>
-                                <p class="goods-spec">很大</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">120</span></del></p>
+                                <p class="goods-descript" th:text="${goods.intro}"></p>
+                                <p class="goods-spec" th:text="${goods.spec}"></p>
+                                <p class="goodsprices"><span class="yj">&yen;</span><span class="yjcont yj"
+                                                                                          th:text="${goods.price}"></span></del>
+                                </p>
                                 <p class="addcart" data-id="41"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=10">
-                                    <div class="img-box">
-                                        <img src="../upload/1-10.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=10">
-                                    <p class="goodsname">智利红提 珍贵品种 品质上等</p>
-                                </a>
-                                <p class="goods-descript">紧实爆汁 果肉新鲜</p>
-                                <p class="goods-spec">约500g</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">18</span></del></p>
-                                <p class="addcart" data-id="10"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=9">
-                                    <div class="img-box">
-                                        <img src="../upload/1-9.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=9">
-                                    <p class="goodsname">美早樱桃 果大核小 饱满均匀</p>
-                                </a>
-                                <p class="goods-descript">堪比车厘子的美味</p>
-                                <p class="goods-spec">约300g/盒</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">36</span></del></p>
-                                <p class="addcart" data-id="9"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=8">
-                                    <div class="img-box">
-                                        <img src="../upload/1-8.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=8">
-                                    <p class="goodsname">广西百香果 香气浓郁 甜酸可口</p>
-                                </a>
-                                <p class="goods-descript">果香浓郁 搭配蜂蜜更美味</p>
-                                <p class="goods-spec">2颗/份</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">5</span></del></p>
-                                <p class="addcart" data-id="8"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=7">
-                                    <div class="img-box">
-                                        <img src="../upload/1-7.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=7">
-                                    <p class="goodsname">龙眼/桂圆 新鲜水果 汁多味甜</p>
-                                </a>
-                                <p class="goods-descript">增强记忆 消除疲劳</p>
-                                <p class="goods-spec">约500g</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">18</span></del></p>
-                                <p class="addcart" data-id="7"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=6">
-                                    <div class="img-box">
-                                        <img src="../upload/1-6.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=6">
-                                    <p class="goodsname">栖霞苹果 爽脆清甜</p>
-                                </a>
-                                <p class="goods-descript">肉质紧密 味道甘甜</p>
-                                <p class="goods-spec">约550g/2个</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">9</span></del></p>
-                                <p class="addcart" data-id="6"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=5">
-                                    <div class="img-box">
-                                        <img src="../upload/1-5.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=5">
-                                    <p class="goodsname">小台芒果 自然生长 生态种植</p>
-                                </a>
-                                <p class="goods-descript">皮薄核小 果肉丰厚</p>
-                                <p class="goods-spec">约500g</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">26</span></del></p>
-                                <p class="addcart" data-id="5"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=4">
-                                    <div class="img-box">
-                                        <img src="../upload/1-4.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=4">
-                                    <p class="goodsname">西州蜜瓜</p>
-                                </a>
-                                <p class="goods-descript">果肉厚质 中心橘红</p>
-                                <p class="goods-spec">约1kg-1.5kg 一个</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">30</span></del></p>
-                                <p class="addcart" data-id="4"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=3">
-                                    <div class="img-box">
-                                        <img src="../upload/1-3.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=3">
-                                    <p class="goodsname">皇冠梨 松软多汁</p>
-                                </a>
-                                <p class="goods-descript">果肉甘甜 细腻无渣</p>
-                                <p class="goods-spec">约500g</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">9</span></del></p>
-                                <p class="addcart" data-id="3"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=2">
-                                    <div class="img-box">
-                                        <img src="../upload/1-2.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=2">
-                                    <p class="goodsname">红心火龙果</p>
-                                </a>
-                                <p class="goods-descript"></p>
-                                <p class="goods-spec">750g-1kg/两个</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">28</span></del></p>
-                                <p class="addcart" data-id="2"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=1">
-                                    <div class="img-box">
-                                        <img src="../upload/1-1.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=1">
-                                    <p class="goodsname">四川耙耙柑 酸甜甘香 柔嫩多汁</p>
-                                </a>
-                                <p class="goods-descript">皮薄易剥 肉质软嫩</p>
-                                <p class="goods-spec">约500g</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">13</span></del></p>
-                                <p class="addcart" data-id="1"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                    </div>
-
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -325,122 +161,27 @@
         <div class="main-box">
             <div class="m-swiper-container">
                 <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-
-                        <div class="goods-box ">
+                    <div class="swiper-slide" th:each="goodList:${arrayList2}">
+                        <div class="goods-box" th:each="goods:${goodList}">
                             <div class="goods">
-                                <a href="detail?id=20">
+                                <a th:href="|detail?id=${goods.id}|">
                                     <div class="img-box">
-                                        <img src="../upload/2-6.jpg">
+                                        <img th:src="${goods.cover}">
                                     </div>
                                 </a>
-                                <a href="detail?id=20">
-                                    <p class="goodsname">正大单冻鸡翅根 精选种鸡</p>
+                                <a th:href="|detail?id=${goods.id}|">
+                                    <div></div>
+                                    <p class="goodsname" th:text="${goods.name}"></p>
                                 </a>
-                                <p class="goods-descript">富有弹性</p>
-                                <p class="goods-spec">约1kg</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">35</span></del></p>
-                                <p class="addcart" data-id="20"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
+                                <p class="goods-descript" th:text="${goods.intro}"></p>
+                                <p class="goods-spec" th:text="${goods.spec}"></p>
+                                <p class="goodsprices"><span class="yj">&yen;</span><span class="yjcont yj"
+                                                                                          th:text="${goods.price}"></span></del>
+                                </p>
+                                <p class="addcart" data-id="41"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
                             </div>
                         </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=19">
-                                    <div class="img-box">
-                                        <img src="../upload/2-5.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=19">
-                                    <p class="goodsname">一品江村黄鸡</p>
-                                </a>
-                                <p class="goods-descript">味道鲜美，口感软嫩弹滑</p>
-                                <p class="goods-spec">约1kg</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">46</span></del></p>
-                                <p class="addcart" data-id="19"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=18">
-                                    <div class="img-box">
-                                        <img src="../upload/2-4.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=18">
-                                    <p class="goodsname">农畉猪肉-猪脊骨 肉厚骨细</p>
-                                </a>
-                                <p class="goods-descript">骨鲜髓足</p>
-                                <p class="goods-spec">约500g</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">13</span></del></p>
-                                <p class="addcart" data-id="18"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=17">
-                                    <div class="img-box">
-                                        <img src="../upload/2-3.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=17">
-                                    <p class="goodsname">巴美草香猪后臀尖 原味原香</p>
-                                </a>
-                                <p class="goods-descript">精致美味，解锁味觉记忆</p>
-                                <p class="goods-spec">约500g</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">32</span></del></p>
-                                <p class="addcart" data-id="17"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=16">
-                                    <div class="img-box">
-                                        <img src="../upload/2-2.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=16">
-                                    <p class="goodsname">牦牛精肉2斤+ 牦牛肋排2斤</p>
-                                </a>
-                                <p class="goods-descript">自然生长</p>
-                                <p class="goods-spec">2kg</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">226</span></del></p>
-                                <p class="addcart" data-id="16"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
                     </div>
-                    <div class="swiper-slide">
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=15">
-                                    <div class="img-box">
-                                        <img src="../upload/2-1.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=15">
-                                    <p class="goodsname">福成尚品前腱子</p>
-                                </a>
-                                <p class="goods-descript"></p>
-                                <p class="goods-spec">1000g</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">99</span></del></p>
-                                <p class="addcart" data-id="15"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                    </div>
-
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -457,122 +198,27 @@
         <div class="main-box">
             <div class="m-swiper-container">
                 <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-
-                        <div class="goods-box ">
+                    <div class="swiper-slide" th:each="goodList:${arrayList3}">
+                        <div class="goods-box" th:each="goods:${goodList}">
                             <div class="goods">
-                                <a href="detail?id=26">
+                                <a th:href="|detail?id=${goods.id}|">
                                     <div class="img-box">
-                                        <img src="../upload/3-6.jpg">
+                                        <img th:src="${goods.cover}">
                                     </div>
                                 </a>
-                                <a href="detail?id=26">
-                                    <p class="goodsname">中畅佳禾 大麦 自然生长</p>
+                                <a th:href="|detail?id=${goods.id}|">
+                                    <div></div>
+                                    <p class="goodsname" th:text="${goods.name}"></p>
                                 </a>
-                                <p class="goods-descript"></p>
-                                <p class="goods-spec">400g</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">59</span></del></p>
-                                <p class="addcart" data-id="26"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
+                                <p class="goods-descript" th:text="${goods.intro}"></p>
+                                <p class="goods-spec" th:text="${goods.spec}"></p>
+                                <p class="goodsprices"><span class="yj">&yen;</span><span class="yjcont yj"
+                                                                                          th:text="${goods.price}"></span></del>
+                                </p>
+                                <p class="addcart" data-id="41"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
                             </div>
                         </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=25">
-                                    <div class="img-box">
-                                        <img src="../upload/3-5.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=25">
-                                    <p class="goodsname">老农帝国 黑豆 自然成熟</p>
-                                </a>
-                                <p class="goods-descript"></p>
-                                <p class="goods-spec">2.5kg</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">82</span></del></p>
-                                <p class="addcart" data-id="25"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=24">
-                                    <div class="img-box">
-                                        <img src="../upload/3-4.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=24">
-                                    <p class="goodsname">香满园美味富强小麦粉</p>
-                                </a>
-                                <p class="goods-descript"></p>
-                                <p class="goods-spec">5kg</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">21</span></del></p>
-                                <p class="addcart" data-id="24"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=23">
-                                    <div class="img-box">
-                                        <img src="../upload/3-3.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=23">
-                                    <p class="goodsname">五得利强筋雪花小麦粉</p>
-                                </a>
-                                <p class="goods-descript"></p>
-                                <p class="goods-spec">2.5kg</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">32</span></del></p>
-                                <p class="addcart" data-id="23"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=22">
-                                    <div class="img-box">
-                                        <img src="../upload/3-2.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=22">
-                                    <p class="goodsname">五常大米珠光黄</p>
-                                </a>
-                                <p class="goods-descript"></p>
-                                <p class="goods-spec">5kg</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">60</span></del></p>
-                                <p class="addcart" data-id="22"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
                     </div>
-                    <div class="swiper-slide">
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=21">
-                                    <div class="img-box">
-                                        <img src="../upload/3-1.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=21">
-                                    <p class="goodsname">五梁红有机种植 大米</p>
-                                </a>
-                                <p class="goods-descript">五常市有机大米</p>
-                                <p class="goods-spec">5kg</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">68</span></del></p>
-                                <p class="addcart" data-id="21"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                    </div>
-
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -589,122 +235,27 @@
         <div class="main-box">
             <div class="m-swiper-container">
                 <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-
-                        <div class="goods-box ">
+                    <div class="swiper-slide" th:each="goodList:${arrayList4}">
+                        <div class="goods-box" th:each="goods:${goodList}">
                             <div class="goods">
-                                <a href="detail?id=32">
+                                <a th:href="|detail?id=${goods.id}|">
                                     <div class="img-box">
-                                        <img src="../upload/4-6.jpg">
+                                        <img th:src="${goods.cover}">
                                     </div>
                                 </a>
-                                <a href="detail?id=32">
-                                    <p class="goodsname">即品坚果 台湾甄选 颗颗饱满</p>
+                                <a th:href="|detail?id=${goods.id}|">
+                                    <div></div>
+                                    <p class="goodsname" th:text="${goods.name}"></p>
                                 </a>
-                                <p class="goods-descript">留存水果本真 有滋有味</p>
-                                <p class="goods-spec">56g</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">12</span></del></p>
-                                <p class="addcart" data-id="32"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
+                                <p class="goods-descript" th:text="${goods.intro}"></p>
+                                <p class="goods-spec" th:text="${goods.spec}"></p>
+                                <p class="goodsprices"><span class="yj">&yen;</span><span class="yjcont yj"
+                                                                                          th:text="${goods.price}"></span></del>
+                                </p>
+                                <p class="addcart" data-id="41"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
                             </div>
                         </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=31">
-                                    <div class="img-box">
-                                        <img src="../upload/4-5.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=31">
-                                    <p class="goodsname">每日C葡萄柚汁</p>
-                                </a>
-                                <p class="goods-descript"></p>
-                                <p class="goods-spec">300ml</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">6</span></del></p>
-                                <p class="addcart" data-id="31"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=30">
-                                    <div class="img-box">
-                                        <img src="../upload/4-4.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=30">
-                                    <p class="goodsname">北冰洋汽水</p>
-                                </a>
-                                <p class="goods-descript">桔汁汽水330ml</p>
-                                <p class="goods-spec"></p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">5</span></del></p>
-                                <p class="addcart" data-id="30"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=29">
-                                    <div class="img-box">
-                                        <img src="../upload/4-3.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=29">
-                                    <p class="goodsname">吉吉黑糖</p>
-                                </a>
-                                <p class="goods-descript"></p>
-                                <p class="goods-spec">玫瑰花味180g</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">23</span></del></p>
-                                <p class="addcart" data-id="29"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=28">
-                                    <div class="img-box">
-                                        <img src="../upload/4-2.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=28">
-                                    <p class="goodsname">Perrier巴黎水天然含气矿泉水 开启生活新方式</p>
-                                </a>
-                                <p class="goods-descript">天然气泡</p>
-                                <p class="goods-spec">330ml</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">9</span></del></p>
-                                <p class="addcart" data-id="28"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
                     </div>
-                    <div class="swiper-slide">
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=27">
-                                    <div class="img-box">
-                                        <img src="../upload/4-1.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=27">
-                                    <p class="goodsname">百威啤酒 经典灌装 小麦醇正拉罐</p>
-                                </a>
-                                <p class="goods-descript"></p>
-                                <p class="goods-spec">500ml*3</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">26</span></del></p>
-                                <p class="addcart" data-id="27"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                    </div>
-
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -721,168 +272,32 @@
         <div class="main-box">
             <div class="m-swiper-container">
                 <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-
-                        <div class="goods-box ">
+                    <div class="swiper-slide" th:each="goodList:${arrayList5}">
+                        <div class="goods-box" th:each="goods:${goodList}">
                             <div class="goods">
-                                <a href="detail?id=40">
+                                <a th:href="|detail?id=${goods.id}|">
                                     <div class="img-box">
-                                        <img src="../upload/20210611164505747.png">
+                                        <img th:src="${goods.cover}">
                                     </div>
                                 </a>
-                                <a href="detail?id=40">
-                                    <p class="goodsname">测试</p>
+                                <a th:href="|detail?id=${goods.id}|">
+                                    <div></div>
+                                    <p class="goodsname" th:text="${goods.name}"></p>
                                 </a>
-                                <p class="goods-descript">测试</p>
-                                <p class="goods-spec">1</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">1</span></del></p>
-                                <p class="addcart" data-id="40"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
+                                <p class="goods-descript" th:text="${goods.intro}"></p>
+                                <p class="goods-spec" th:text="${goods.spec}"></p>
+                                <p class="goodsprices"><span class="yj">&yen;</span><span class="yjcont yj"
+                                                                                          th:text="${goods.price}"></span></del>
+                                </p>
+                                <p class="addcart" data-id="41"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
                             </div>
                         </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=39">
-                                    <div class="img-box">
-                                        <img src="../upload/2-6.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=39">
-                                    <p class="goodsname">正大单冻鸡翅根 精选种鸡</p>
-                                </a>
-                                <p class="goods-descript">富有弹性</p>
-                                <p class="goods-spec">约1kg</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">35</span></del></p>
-                                <p class="addcart" data-id="39"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=38">
-                                    <div class="img-box">
-                                        <img src="../upload/2-5.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=38">
-                                    <p class="goodsname">一品江村黄鸡</p>
-                                </a>
-                                <p class="goods-descript">味道鲜美，口感软嫩弹滑</p>
-                                <p class="goods-spec">约1kg</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">46</span></del></p>
-                                <p class="addcart" data-id="38"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=37">
-                                    <div class="img-box">
-                                        <img src="../upload/2-4.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=37">
-                                    <p class="goodsname">农畉猪肉-猪脊骨 肉厚骨细</p>
-                                </a>
-                                <p class="goods-descript">骨鲜髓足</p>
-                                <p class="goods-spec">约500g</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">13</span></del></p>
-                                <p class="addcart" data-id="37"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=36">
-                                    <div class="img-box">
-                                        <img src="../upload/2-3.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=36">
-                                    <p class="goodsname">巴美草香猪后臀尖 原味原香</p>
-                                </a>
-                                <p class="goods-descript">精致美味，解锁味觉记忆</p>
-                                <p class="goods-spec">约500g</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">32</span></del></p>
-                                <p class="addcart" data-id="36"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
                     </div>
-                    <div class="swiper-slide">
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=35">
-                                    <div class="img-box">
-                                        <img src="../upload/2-2.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=35">
-                                    <p class="goodsname">牦牛精肉2斤+ 牦牛肋排2斤</p>
-                                </a>
-                                <p class="goods-descript">自然生长</p>
-                                <p class="goods-spec">2kg</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">226</span></del></p>
-                                <p class="addcart" data-id="35"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                        <div class="goods-box ">
-                            <div class="goods">
-                                <a href="detail?id=34">
-                                    <div class="img-box">
-                                        <img src="../upload/2-1.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail?id=34">
-                                    <p class="goodsname">福成尚品前腱子</p>
-                                </a>
-                                <p class="goods-descript"></p>
-                                <p class="goods-spec">1000g</p>
-                                <p class="goodsprices"><span class="yj">&yen;<span class="yjcont">99</span></del></p>
-                                <p class="addcart" data-id="34"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
-                            </div>
-                        </div>
-
-
-                    </div>
-
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
-
-    <div class="main Louti vegetable">
-        <div class="m-hot-tit clearfix">
-            <div class="m-hot-tit-left"><span>户外用品</span></div>
-            <a href="type?id=6">
-                <div class="m-hot-tit-right">查看更多 ></div>
-            </a>
-        </div>
-        <div class="main-box">
-            <div class="m-swiper-container">
-                <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-
-                    </div>
-
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </div>
-
-
 </div>
 <footer th:replace="/index/footer::myfoot"></footer>
 </body>

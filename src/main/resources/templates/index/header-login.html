@@ -25,13 +25,13 @@
 		</div>
 		 <div class="sear_fir">
 				<div class="sigin">
-	     			<span class="wel" id="wel" th:text="${session.login.name}"></span>
+	     			<span class="wel" id="wel" th:text="${session.login.username}"></span>
 	     		</div>
 				<div class="my">
 					<a>个人中心</a>
 					<i class="iconfont icon-zheng-triangle1"></i>
 					<ul class="uls">
-						<li><a href="order">我的订单</a></li>
+						<li><a th:href="'order?username='+${session.login.username}">我的订单</a></li>
 						<li><a href="address">收货地址</a></li>
 						<li><a href="password">修改密码</a></li>
 						<li><a href="logout">退出</a></li>

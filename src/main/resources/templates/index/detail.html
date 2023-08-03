@@ -1,144 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>商品详情</title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="/css/public.css">
-	<link rel="stylesheet" type="text/css" href="/css/common.css">
-	<link rel="stylesheet" type="text/css" href="/css/details.css">
-	<link rel="stylesheet" type="text/css" href="/css/reclassify.css">
+    <title>商品详情</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/public.css">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/css/details.css">
+    <link rel="stylesheet" type="text/css" href="/css/reclassify.css">
 </head>
 <body>
-	
-	
-	<div id="main" class="main">
-	
-		<!-- 面包屑 -->
-		<div id="mnav" style="background: #f6f6f6;border: 1px solid #eee;">
-			<a href="type?id="><span style="color:#ff852b;"></span></a>
-			<i class="iconfont icon-arrow-left"></i>					
-			<span>辣狗</span>
-		</div>
-		
-		<div class="main-left clearfix" style="padding:40px 0;">
-			<!--商品图片-->
-			<div class="goodsimg">
-				<div class="goodsbigimg">
-					<img src="../upload/20211019164357665.jpg">
-				</div>
-				<!-- 
-				<div class="goodssmimg">
-					<div class="btnleft">左移
-						<i class="iconfont icon-zuojiantou1"></i>
-					</div>
-					<div class="btnright">右移
-						<i class="iconfont icon-arrow-left"></i>
-					</div>
-					<div class="m-ul-box">
-						<ul class="clearfix">
-							<li><img src=""/></li>
-							<li><img src=""/></li>
-							<li><img src=""/></li>
-							<li><img src=""/></li>
-							<li><img src=""/></li>
-						</ul>
-					</div>
-				</div> -->
-			</div>
-				
-			<div class="goodscont">
-				<div class="goodsname">辣狗</div>
-				<div class="goodsdis">不错的狗子</div>
-				<div class="goodsnorms gattr">
-					<span class="tit">规 格</span>
-					<span style="cursor: pointer" class="gnorms norm-active">
-						<i class="iconfont icon-xuanzhong3"></i>很大
+<div id="main" class="main">
+    <!-- 面包屑 -->
+    <div id="mnav" style="background: #f6f6f6;border: 1px solid #eee;">
+        <a href="type?id=1"><span style="color:#ff852b;"></span></a>
+        <i class="iconfont icon-arrow-left"></i>
+        <span th:text="${goodsById.name}">辣狗</span>
+    </div>
+
+    <div class="main-left clearfix" style="padding:40px 0;">
+        <!--商品图片-->
+        <div class="goodsimg">
+            <div class="goodsbigimg">
+                <img th:src="${goodsById.cover}">
+            </div>
+        </div>
+
+        <div class="goodscont">
+            <div class="goodsname" th:text="${goodsById.name}">辣狗</div>
+            <div class="goodsdis" th:text="${goodsById.intro}">不错的狗子</div>
+            <div class="goodsnorms gattr">
+                <span class="tit">规 格</span>
+                <span style="cursor: pointer" class="gnorms norm-active">
+						<i class="iconfont icon-xuanzhong3"></i><span th:text="${goodsById.spec}"></span>
 					</span>
-				</div>
-				<div class="goodsnorms gattr">
-					<span class="tit">库存</span>5
-				</div>
-				<div class="goodsprices gattr">
-					<span class="tit">价 格</span>
-					<span class="opri">￥<span class="opcont" id="goodssprice">120</span></span>
-				</div>
-				<!-- 
-				<div class="goodsnum gattr">
-					<span class="tit">数 量</span>
-					<input type="button" id="gcut" class="btn" value="-" style="cursor: pointer"/>
-					<input type="text" name="goods_num" id="sum" value="1" />
-					<input type="button" id="gadd" class="btn" value="+" style="cursor: pointer" />
-				</div> -->
-				<div class="handle" style="border:none">
-					<p class="addcart" data-id="41">加入购物车</p>
-					<!-- <p class="buy">立即购买</p> -->
-				</div>
-			</div>
-			
-			<!--大家都在买-->
-			<div class="allbuy">
-				<div class="tit"><s></s>大家都在买<s></s></div>
-				<div class="abgoods">
-					<div class="goodspage">
-						
-							<div class="goods">
-								<a href="detail?id=32"><img src="../upload/4-6.jpg"/></a>
-								<p class="goodsprice">￥<span>12</span></p>
-								<a href="detail?id=32"><p class="goodsname">即品坚果 台湾甄选 颗颗饱满</p></a>
-							</div>
-						
-							<div class="goods">
-								<a href="detail?id=6"><img src="../upload/1-6.jpg"/></a>
-								<p class="goodsprice">￥<span>9</span></p>
-								<a href="detail?id=6"><p class="goodsname">栖霞苹果 爽脆清甜</p></a>
-							</div>
-						
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<!--商品详情-->
-		<div id="cont">
-			<div class="goodsmain">
-				<div class="goodstit">
-					<ul>
-						<li id="g1" class="active">商品详情</li>
-						<!-- <li id="g2" class="">用户评价<span>（5）</span></li>
-						<li id="g3">售后服务</li> -->
-					</ul>
-				</div>
-				<div class="gmain">
-					<div class="main xq">
-						<div class="dateilsimg" style="display: block;">
-							就是离开的解放路手机丢了就是雷锋精神来快点放假
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-	</div>
-	
-		
+            </div>
+            <div class="goodsnorms gattr">
+                <span class="tit">库存</span><span th:text="${goodsById.stock}"></span>
+            </div>
+            <div class="goodsprices gattr">
+                <span class="tit">价 格</span>
+                <span class="opri">￥<span class="opcont" id="goodssprice" th:text="${goodsById.price}">120</span></span>
+            </div>
+            <div class="handle" style="border:none">
+                <p class="addcart" data-id="41">加入购物车</p>
+                <!-- <p class="buy">立即购买</p> -->
+            </div>
+        </div>
+
+        <!--大家都在买-->
+        <div class="allbuy">
+            <div class="tit"><s></s>大家都在买<s></s></div>
+            <div class="abgoods">
+                <div class="goodspage">
+
+                    <div class="goods">
+                        <a href="detail?id=32"><img src="../upload/4-6.jpg"/></a>
+                        <p class="goodsprice">￥<span>12</span></p>
+                        <a href="detail?id=32"><p class="goodsname">即品坚果 台湾甄选 颗颗饱满</p></a>
+                    </div>
+                    <div class="goods">
+                        <a href="detail?id=6"><img src="../upload/1-6.jpg"/></a>
+                        <p class="goodsprice">￥<span>9</span></p>
+                        <a href="detail?id=6"><p class="goodsname">栖霞苹果 爽脆清甜</p></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--商品详情-->
+    <div id="cont">
+        <div class="goodsmain">
+            <div class="goodstit">
+                <ul>
+                    <li id="g1" class="active">商品详情</li>
+                    <!-- <li id="g2" class="">用户评价<span>（5）</span></li>
+                    <li id="g3">售后服务</li> -->
+                </ul>
+            </div>
+            <div class="gmain">
+                <div class="main xq">
+                    <div class="dateilsimg" style="display: block;">
+                        就是离开的解放路手机丢了就是雷锋精神来快点放假
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 
 </body>
 <script src="/js/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-//数量增加或减少按钮功能实现
-$("#gcut").on("click",function(){
-	var num = $("#sum").val()
-	num--;
-	if(num<=1){
-		num = 1
-	}
-	$("#sum").val(num)
-});
-$("#gadd").on("click",function(){		
-	var num = $("#sum").val()
-	num++;
-	$("#sum").val(num)
-});
+    //数量增加或减少按钮功能实现
+    $("#gcut").on("click", function () {
+        var num = $("#sum").val()
+        num--;
+        if (num <= 1) {
+            num = 1
+        }
+        $("#sum").val(num)
+    });
+    $("#gadd").on("click", function () {
+        var num = $("#sum").val()
+        num++;
+        $("#sum").val(num)
+    });
 </script>
 </html>

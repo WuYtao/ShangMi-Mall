@@ -17,4 +17,5 @@ public class Items {
     private Integer orderId;
     private Integer goodId;
     private String goods_name;
+    private String cover;
 }

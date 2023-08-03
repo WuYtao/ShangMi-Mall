@@ -3,6 +3,7 @@ package com.hp.controller.index;
 import com.hp.pojo.Users;
 import com.hp.service.UsersService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.DirectFieldAccessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,7 +34,7 @@ public class IndexLoginController {
         log.info("用户登录" + users.getName());
         if (login != null) {
             session.setAttribute("login", login);
-            return "index/index";
+            return "redirect:index";
         }
         model.addAttribute("msg", "登录失败账号或密码错误");
         return "index/login";
@@ -43,7 +44,7 @@ public class IndexLoginController {
     public String logout(HttpSession session) {
         log.info("用户退出登录");
         session.removeAttribute("login");
-        return "index/index";
+        return "redirect:index";
     }
 
     @PostMapping("reg")

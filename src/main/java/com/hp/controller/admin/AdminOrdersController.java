@@ -17,7 +17,7 @@ public class AdminOrdersController {
 
     @GetMapping("orderList")
     public String orderList(Integer page, Model model) {
-        PageBean pageBean = ordersService.getAll(page);
+        PageBean pageBean = ordersService.getAll(page, null);
         int i = page == null ? 1 : page;
         model.addAttribute("page", i);
         model.addAttribute("Total", pageBean.getTotal());

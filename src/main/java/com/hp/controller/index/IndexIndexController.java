@@ -8,7 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static com.hp.utils.ArrayListData.listData;
 
 @Controller
 @RequestMapping("index")
@@ -29,14 +32,16 @@ public class IndexIndexController {
         model.addAttribute("goodsTops", goodsTops);
         model.addAttribute("goodsHotQ", goodsHotQ);
         model.addAttribute("goodsHotG", goodsHotG);
-        model.addAttribute("getByTypeId1", getByTypeId1);
-        long getId1 = getByTypeId1.size() / 5;
-        getId1 = getByTypeId1.size() % 5 != 0 ? getId1 + 1 : getId1;
-        model.addAttribute("getId1", getId1);
-        model.addAttribute("getByTypeId2", getByTypeId2);
-        model.addAttribute("getByTypeId3", getByTypeId3);
-        model.addAttribute("getByTypeId4", getByTypeId4);
-        model.addAttribute("getByTypeId5", getByTypeId5);
+        ArrayList arrayList1 = listData(getByTypeId1);
+        model.addAttribute("arrayList1", arrayList1);
+        ArrayList arrayList2 = listData(getByTypeId2);
+        model.addAttribute("arrayList2", arrayList2);
+        ArrayList arrayList3 = listData(getByTypeId3);
+        model.addAttribute("arrayList3", arrayList3);
+        ArrayList arrayList4 = listData(getByTypeId4);
+        model.addAttribute("arrayList4", arrayList4);
+        ArrayList arrayList5 = listData(getByTypeId5);
+        model.addAttribute("arrayList5", arrayList5);
         return "index/index";
     }
 }

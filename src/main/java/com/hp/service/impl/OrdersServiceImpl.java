@@ -5,6 +5,7 @@ import com.github.pagehelper.PageHelper;
 import com.hp.mapper.OrdersMapper;
 import com.hp.pojo.Orders;
 import com.hp.pojo.PageBean;
+import com.hp.pojo.Users;
 import com.hp.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,12 +19,12 @@ public class OrdersServiceImpl implements OrdersService {
     private OrdersMapper ordersMapper;
 
     @Override
-    public PageBean getAll(Integer page) {
+    public PageBean getAll(Integer page, Users users) {
         if (page == null) {
             page = 1;
         }
         PageHelper.startPage(page, 5);
-        List<Orders> all = ordersMapper.getAll();
+        List<Orders> all = ordersMapper.getAll(users);
         Page<Orders> p = (Page<Orders>) all;
         long YeMa = p.getTotal() / 5;
         if (p.getTotal() % 5 != 0)
