@@ -1,158 +1,76 @@
 <!DOCTYPE html>
-<html>
-	<head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>热销排行</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/public.css">
+    <link rel="stylesheet" type="text/css" href="/css/reclassify.css">
+</head>
+<body>
+<div id="main" class="main">
+    <!-- 该页面用来展示商品列表。  1.查询后需要展示多个商品。  2.点击商品类型需要展示多个商品 -->
+    <!-- 如果控制器没有传递type和name过来，就不用管这段代码。 -->
+    <div class="goodscont clearfix">
+        <div class="goods-box animated wobble" th:each="goods:${Rows}">
+            <div class="goods">
+                <a target="_blank" th:href="'detail?id='+${goods.id}">
+                    <div class="img-box">
+                        <img th:src="${goods.cover}">
+                    </div>
+                </a>
+                <a target="_blank" th:href="'detail?id='+${goods.id}">
+                    <p class="goodsname" th:text="${goods.name}">香满园美味富强小麦粉</p>
+                </a>
+                <p class="goods-descript"></p>
+                <p class="goods-spec" th:text="${goods.spec}">5kg</p>
+                <p class="goodsprices" style="display:block;">
+                    <span class="yj">￥<span class="yjcont" th:text="${goods.price}">21</span></span>
+                </p>
+                <p class="addcart" data-id="24" style="display:none;">
+                    <i class="iconfont icon-gouwuche3"></i>加入购物车
+                </p>
+            </div>
+        </div>
+    </div>
 
-		<title>热销排行</title>
+    <div class='holder' th:with="liSize=${YeMaShu}">
+        <div style="display: none" id="page" th:text="${page}"></div>
+        <a th:href='${hot}+1'>首页</a>
+        <a th:if="${page}>1" th:href='${hot}+${upper}'>上页</a>
+        <div style="display: inline" th:each="index : ${#numbers.sequence(1, liSize)}">
+            <a class="ok" th:href='${hot}+${index}' th:text="${index}"></a>
+            <!--            <a class='jp-current'></a>-->
+        </div>
+        <a th:if="${page}<${YeMaShu}" class="next" th:href='${hot}+${next}'>下页</a>
+        <a th:href='${hot}+${YeMaShu}'>尾页</a>
+        <a href='index'>返回</a>
+    </div>
 
-		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="/css/public.css">
-		<link rel="stylesheet" type="text/css" href="/css/reclassify.css">
-	</head>
-	<body>
-		<div id="main" class="main">
-			<!-- 该页面用来展示商品列表。  1.查询后需要展示多个商品。  2.点击商品类型需要展示多个商品 -->
-			<!-- 如果控制器没有传递type和name过来，就不用管这段代码。 -->
-			<div class="goodscont clearfix">
-				<div class="goods-box animated wobble">
-					<div class="goods">
-						<a target="_blank" href="detail?id=24">
-							<div class="img-box">
-								<img src="../upload/3-4.jpg">
-							</div>
-						</a>
-						<a target="_blank" href="detail?id=24">
-							<p class="goodsname">香满园美味富强小麦粉</p>
-						</a>
-						<p class="goods-descript"></p>
-						<p class="goods-spec">5kg</p>
-						<p class="goodsprices" style="display:block;">
-							<span class="yj">￥<span class="yjcont">21</span></span>
-						</p>
-						<p class="addcart" data-id="24" style="display:none;">
-							<i class="iconfont icon-gouwuche3"></i>加入购物车
-						</p>
-					</div>
-				</div>
+</div>
 
-				<div class="goods-box animated wobble">
-					<div class="goods">
-						<a target="_blank" href="detail?id=25">
-							<div class="img-box">
-								<img src="../upload/3-5.jpg">
-							</div>
-						</a>
-						<a target="_blank" href="detail?id=25">
-							<p class="goodsname">老农帝国 黑豆 自然成熟</p>
-						</a>
-						<p class="goods-descript"></p>
-						<p class="goods-spec">2.5kg</p>
-						<p class="goodsprices" style="display:block;">
-							<span class="yj">￥<span class="yjcont">82</span></span>
-						</p>
-						<p class="addcart" data-id="25" style="display:none;">
-							<i class="iconfont icon-gouwuche3"></i>加入购物车
-						</p>
-					</div>
-				</div>
+</body>
+<script>
+    const page = document.querySelector("#page").innerHTML
+    const ok = document.querySelectorAll(".ok")
+    ok[page - 1].classList.add("jp-current")
+</script>
 
-				<div class="goods-box animated wobble">
-					<div class="goods">
-						<a target="_blank" href="detail?id=26">
-							<div class="img-box">
-								<img src="../upload/3-6.jpg">
-							</div>
-						</a>
-						<a target="_blank" href="detail?id=26">
-							<p class="goodsname">中畅佳禾 大麦 自然生长</p>
-						</a>
-						<p class="goods-descript"></p>
-						<p class="goods-spec">400g</p>
-						<p class="goodsprices" style="display:block;">
-							<span class="yj">￥<span class="yjcont">59</span></span>
-						</p>
-						<p class="addcart" data-id="26" style="display:none;">
-							<i class="iconfont icon-gouwuche3"></i>加入购物车
-						</p>
-					</div>
-				</div>
-
-				<div class="goods-box animated wobble">
-					<div class="goods">
-						<a target="_blank" href="detail?id=27">
-							<div class="img-box">
-								<img src="../upload/4-1.jpg">
-							</div>
-						</a>
-						<a target="_blank" href="detail?id=27">
-							<p class="goodsname">百威啤酒 经典灌装 小麦醇正拉罐</p>
-						</a>
-						<p class="goods-descript"></p>
-						<p class="goods-spec">500ml*3</p>
-						<p class="goodsprices" style="display:block;">
-							<span class="yj">￥<span class="yjcont">26</span></span>
-						</p>
-						<p class="addcart" data-id="27" style="display:none;">
-							<i class="iconfont icon-gouwuche3"></i>加入购物车
-						</p>
-					</div>
-				</div>
-
-				<div class="goods-box animated wobble">
-					<div class="goods">
-						<a target="_blank" href="detail?id=28">
-							<div class="img-box">
-								<img src="../upload/4-2.jpg">
-							</div>
-						</a>
-						<a target="_blank" href="detail?id=28">
-							<p class="goodsname">Perrier巴黎水天然含气矿泉水 开启生活新方式</p>
-						</a>
-						<p class="goods-descript">天然气泡</p>
-						<p class="goods-spec">330ml</p>
-						<p class="goodsprices" style="display:block;">
-							<span class="yj">￥<span class="yjcont">9</span></span>
-						</p>
-						<p class="addcart" data-id="28" style="display:none;">
-							<i class="iconfont icon-gouwuche3"></i>加入购物车
-						</p>
-					</div>
-				</div>
-
-			</div>
-
-			<div class='holder'>
-				<a href='hot?page=1'>首页</a>
-				<a href='hot?page=5'>上页</a>
-				<a title='第1页' href='hot?page=1'>1</a>
-				<a title='第2页' href='hot?page=2'>2</a>
-				<a title='第3页' href='hot?page=3'>3</a> 
-				... 
-				<a class='jp-current'>6</a>
-				<a title='第7页' href='hot?page=7'>7</a>
-				<a title='第8页' href='hot?page=8'>8</a>
-				<a href='hot?page=7'>下页</a>
-				<a href='hot?page=8'>尾页</a>
-			</div>
-
-		</div>
-
-	</body>
-	<script src="/js/jquery.min.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		// 显示隐藏购物车
-		$(".goods-box").on("mouseenter", function() {
-			$(this).addClass("active")
-			$(this).find(".addcart").show()
-			$(this).find(".reserve").show()
-			$(this).find(".m_stop").show()
-			$(this).find(".goodsprices").hide()
-		});
-		$(".goods-box").on("mouseleave", function() {
-			$(this).removeClass("active")
-			$(this).find(".addcart").hide()
-			$(this).find(".reserve").hide()
-			$(this).find(".m_stop").hide()
-			$(this).find(".goodsprices").show()
-		});
-	</script>
+<script src="/js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    // 显示隐藏购物车
+    $(".goods-box").on("mouseenter", function () {
+        $(this).addClass("active")
+        $(this).find(".addcart").show()
+        $(this).find(".reserve").show()
+        $(this).find(".m_stop").show()
+        $(this).find(".goodsprices").hide()
+    });
+    $(".goods-box").on("mouseleave", function () {
+        $(this).removeClass("active")
+        $(this).find(".addcart").hide()
+        $(this).find(".reserve").hide()
+        $(this).find(".m_stop").hide()
+        $(this).find(".goodsprices").show()
+    });
+</script>
 </html>

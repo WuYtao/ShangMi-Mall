@@ -28,4 +28,10 @@ public interface GoodsMapper {
     List<Goods> getSalesG();
 
     List<Goods> getByTypeId(Integer type_id);
+
+    List<Goods> getAllBySales();
+
+    List<Goods> getByIdAllASCId();
+
+    List<Goods> getByLike(String name);
 }

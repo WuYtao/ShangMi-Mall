@@ -104,27 +104,27 @@ $(".uls li a").on("mouseleave",function(){
 	$(this).css('color','#919191');
 })
 // 加入购物车
-$(document).on("click", ".addcart", function(){
-	var goodId = $(this).attr("data-id");
-	var index = layer.load();
-	$.post("cartBuy", {goodId:goodId}, function(data){
-		layer.close(index);
-		if(data==true){
-			layer.msg("加入成功", {
-                icon: 1,   // 成功图标
-                time: 1200 //1.2秒关闭（如果不配置，默认是3秒）
-            });
-			updateCartnum(1); // 更新数量
-		}else if(data==false){
-            layer.msg("操作失败", {
-                icon: 2,   // 失败图标
-                time: 2000 //2秒关闭（如果不配置，默认是3秒）
-            });
-        }else{ // 重新渲染页面
-        	document.write(data);
-        }
-	});
-});
+// $(document).on("click", ".addcart", function(){
+// 	var goodId = $(this).attr("data-id");
+// 	var index = layer.load();
+// 	$.post("cartBuy", {goodId:goodId}, function(data){
+// 		layer.close(index);
+// 		if(data==true){
+// 			layer.msg("加入成功", {
+//                 icon: 1,   // 成功图标
+//                 time: 1200 //1.2秒关闭（如果不配置，默认是3秒）
+//             });
+// 			updateCartnum(1); // 更新数量
+// 		}else if(data==false){
+//             layer.msg("操作失败", {
+//                 icon: 2,   // 失败图标
+//                 time: 2000 //2秒关闭（如果不配置，默认是3秒）
+//             });
+//         }else{ // 重新渲染页面
+//         	document.write(data);
+//         }
+// 	});
+// });
 
 // 更新购物车显示数量
 function updateCartnum(num){

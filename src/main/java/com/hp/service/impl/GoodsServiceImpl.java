@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class GoodsServiceImpl implements GoodsService {
@@ -80,5 +79,62 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public List<Goods> getByTypeId(Integer type_id) {
         return goodsMapper.getByTypeId(type_id);
+    }
+
+
+    @Override
+    public PageBean getAllBySales(Integer page) {
+        if (page == null) {
+            page = 1;
+        }
+        PageHelper.startPage(page, 5);
+        List<Goods> all = goodsMapper.getAllBySales();
+        Page<Goods> p = (Page<Goods>) all;
+        long YeMa = p.getTotal() / 5;
+        if (p.getTotal() % 5 != 0)
+            YeMa++;
+        return new PageBean(p.getTotal(), p.getResult(), YeMa);
+    }
+
+    @Override
+    public PageBean getByTypeId(Integer page, Integer type_id) {
+        if (page == null) {
+            page = 1;
+        }
+        PageHelper.startPage(page, 5);
+        List<Goods> all = goodsMapper.getByTypeId(type_id);
+        Page<Goods> p = (Page<Goods>) all;
+        long YeMa = p.getTotal() / 5;
+        if (p.getTotal() % 5 != 0)
+            YeMa++;
+        return new PageBean(p.getTotal(), p.getResult(), YeMa);
+    }
+
+    @Override
+    public PageBean getByIdAllASCId(Integer page) {
+        if (page == null) {
+            page = 1;
+        }
+        PageHelper.startPage(page, 5);
+        List<Goods> all = goodsMapper.getByIdAllASCId();
+        Page<Goods> p = (Page<Goods>) all;
+        long YeMa = p.getTotal() / 5;
+        if (p.getTotal() % 5 != 0)
+            YeMa++;
+        return new PageBean(p.getTotal(), p.getResult(), YeMa);
+    }
+
+    @Override
+    public PageBean getByLike(Integer page,String name) {
+        if (page == null) {
+            page = 1;
+        }
+        PageHelper.startPage(page, 5);
+        List<Goods> all = goodsMapper.getByLike(name);
+        Page<Goods> p = (Page<Goods>) all;
+        long YeMa = p.getTotal() / 5;
+        if (p.getTotal() % 5 != 0)
+            YeMa++;
+        return new PageBean(p.getTotal(), p.getResult(), YeMa);
     }
 }

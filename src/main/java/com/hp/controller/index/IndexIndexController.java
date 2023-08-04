@@ -19,6 +19,12 @@ public class IndexIndexController {
     @Autowired
     private GoodsService goodsService;
 
+    /**
+     * 首页数据展示
+     *
+     * @param model
+     * @return
+     */
     @GetMapping("index")
     public String index(Model model) {
         List<Goods> goodsTops = goodsService.getByLimit();

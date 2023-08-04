@@ -98,6 +98,22 @@
     <select id="getByTypeId" resultType="com.hp.pojo.Goods">
         select *
         from goods
-        where type_id = #{type_id};
+        where type_id = #{type_id}
+    </select>
+
+    <select id="getAllBySales" resultType="com.hp.pojo.Goods">
+        select *
+        from goods
+        order by sales DESC
+    </select>
+    <select id="getByIdAllASCId" resultType="com.hp.pojo.Goods">
+        select *
+        from goods
+        order by id
+    </select>
+    <select id="getByLike" resultType="com.hp.pojo.Goods">
+        select *
+        from goods
+        where name like concat('%', #{name}, '%')
     </select>
 </mapper>

@@ -43,7 +43,8 @@
                                 <p class="goodsprices"><span class="yj">&yen;<span class="yjcont"
                                                                                    th:text="${goodstops.price}">12</span></span>
                                 </p>
-                                <p class="addcart" data-id="32"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
+                                <p class="addcart" th:data-id="${goodstops.id}"><i class="iconfont icon-gouwuche3"></i>加入购物车
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -80,7 +81,8 @@
                             <p class="goodsprices"><span class="yj">&yen;<span class="yjcont"
                                                                                th:text="${goodsHotQ.price}">9</span></span>
                             </p>
-                            <p class="addcart" data-id="6"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
+                            <p class="addcart" th:data-id="${goodsHotQ.id}"><i class="iconfont icon-gouwuche3"></i>加入购物车
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -104,7 +106,8 @@
                             <p class="goodsprices"><span class="yj">&yen;<span class="yjcont"
                                                                                th:text="${goodsHotG.price}">30</span></span>
                             </p>
-                            <p class="addcart" data-id="4"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
+                            <p class="addcart" th:data-id="${goodsHotG.id}"><i class="iconfont icon-gouwuche3"></i>加入购物车
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -141,7 +144,8 @@
                                 <p class="goodsprices"><span class="yj">&yen;</span><span class="yjcont yj"
                                                                                           th:text="${goods.price}"></span></del>
                                 </p>
-                                <p class="addcart" data-id="41"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
+                                <p class="addcart" th:data-id="${goods.id}"><i class="iconfont icon-gouwuche3"></i>加入购物车
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -178,7 +182,8 @@
                                 <p class="goodsprices"><span class="yj">&yen;</span><span class="yjcont yj"
                                                                                           th:text="${goods.price}"></span></del>
                                 </p>
-                                <p class="addcart" data-id="41"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
+                                <p class="addcart" th:data-id="${goods.id}"><i class="iconfont icon-gouwuche3"></i>加入购物车
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -215,7 +220,8 @@
                                 <p class="goodsprices"><span class="yj">&yen;</span><span class="yjcont yj"
                                                                                           th:text="${goods.price}"></span></del>
                                 </p>
-                                <p class="addcart" data-id="41"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
+                                <p class="addcart" th:data-id="${goods.id}"><i class="iconfont icon-gouwuche3"></i>加入购物车
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -252,7 +258,8 @@
                                 <p class="goodsprices"><span class="yj">&yen;</span><span class="yjcont yj"
                                                                                           th:text="${goods.price}"></span></del>
                                 </p>
-                                <p class="addcart" data-id="41"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
+                                <p class="addcart" th:data-id="${goods.id}"><i class="iconfont icon-gouwuche3"></i>加入购物车
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -289,7 +296,8 @@
                                 <p class="goodsprices"><span class="yj">&yen;</span><span class="yjcont yj"
                                                                                           th:text="${goods.price}"></span></del>
                                 </p>
-                                <p class="addcart" data-id="41"><i class="iconfont icon-gouwuche3"></i>加入购物车</p>
+                                <p class="addcart" th:data-id="${goods.id}"><i class="iconfont icon-gouwuche3"></i>加入购物车
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -297,6 +305,9 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
+    </div>
+    <div th:if="${session.login!=null}">
+        <span class="span" style="display: none" th:text="${session.login.id}"></span>
     </div>
 </div>
 <footer th:replace="/index/footer::myfoot"></footer>
@@ -306,6 +317,26 @@
 <script src="/js/jquery.fly.min.js" type="text/javascript"></script>
 <script src="/js/jquery.flexslider.min.js" type="text/javascript"></script>
 <script src="/js/swiper.min.js" type="text/javascript"></script>
+<script src="/layer/layer.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    const addcartAll = document.querySelectorAll(".addcart")
+
+    for (let i = 0; i < addcartAll.length; i++) {
+        addcartAll[i].addEventListener("click", async function () {
+            let dataId = this.getAttribute("data-id");
+            const span = document.querySelector(".span").innerHTML
+            console.log(dataId)
+            const {data} = await axios.post("http://localhost:8080/index/yes", {
+                goodId: dataId,
+                amount: 1,
+                userId: span
+            })
+            console.log(data)
+        })
+    }
+</script>
+
 <script type="text/javascript">
     // 商品轮播
     new Swiper('.m-swiper-container', {
@@ -348,7 +379,6 @@
         $(this).find(".reserve").hide()
         $(this).find(".goodsprices").show()
     });
-
 </script>
 
 </html>
