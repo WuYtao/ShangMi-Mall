@@ -1,6 +1,8 @@
 package com.hp.controller.index;
 
+import com.hp.pojo.Carts;
 import com.hp.pojo.Users;
+import com.hp.service.CartService;
 import com.hp.service.UsersService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.DirectFieldAccessor;
@@ -22,6 +24,8 @@ import javax.servlet.http.HttpSession;
 public class IndexLoginController {
     @Autowired
     private UsersService usersService;
+    @Autowired
+    private CartService cartService;
 
     @GetMapping("login")
     public String login() {
@@ -33,7 +37,12 @@ public class IndexLoginController {
         Users login = usersService.login(users);
         log.info("用户登录" + users.getName());
         if (login != null) {
+            Carts carts = new Carts();
+            carts.setUserId(login.getId());
+            int i = cartService.countAll(carts);
             session.setAttribute("login", login);
+            System.out.println("i = " + i);
+            session.setAttribute("cartSize", i);
             return "redirect:index";
         }
         model.addAttribute("msg", "登录失败账号或密码错误");

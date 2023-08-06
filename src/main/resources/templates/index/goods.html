@@ -7,6 +7,12 @@
     <link rel="stylesheet" type="text/css" href="/css/reclassify.css">
 </head>
 <body>
+<div th:if="${session.login==null}">
+    <div th:replace="~{/index/header::myhead}"></div>
+</div>
+<div th:if="${session.login!=null}">
+    <div th:replace="~{/index/header-login::myhead-login}"></div>
+</div>
 <div id="main" class="main">
     <!-- 该页面用来展示商品列表。  1.查询后需要展示多个商品。  2.点击商品类型需要展示多个商品 -->
     <!-- 如果控制器没有传递type和name过来，就不用管这段代码。 -->

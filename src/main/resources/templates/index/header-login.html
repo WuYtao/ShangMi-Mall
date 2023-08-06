@@ -21,7 +21,7 @@
         </div>
         <div class="sera_cart">
             <a href="cart"><p><i class="iconfont icon-gouwuche5"></i>我的购物车</p></a>
-            <span class="cartnum">5</span>
+            <span class="cartnum" th:text="${session.cartSize}">5</span>
         </div>
         <div class="sear_fir">
             <div class="sigin">
@@ -127,29 +127,6 @@
     })
 
     // 加入购物车
-    // $(document).on("click", ".addcart", function(){
-    // 	console.log(123)
-    // 	var goodId = $(this).attr("data-id");
-    // 	var index = layer.load();
-    // 	$.post("cartBuy", {goodId:goodId}, function(data){
-    // 		layer.close(index);
-    // 		if(data==true){
-    // 			layer.msg("加入成功", {
-    //                 icon: 1,   // 成功图标
-    //                 time: 1200 //1.2秒关闭（如果不配置，默认是3秒）
-    //             });
-    // 			updateCartnum(1); // 更新数量
-    // 		}else if(data==false){
-    //             layer.msg("操作失败", {
-    //                 icon: 2,   // 失败图标
-    //                 time: 2000 //2秒关闭（如果不配置，默认是3秒）
-    //             });
-    //         }else{ // 重新渲染页面
-    //         	document.write(data);
-    //         }
-    // 	});
-    // });
-
     // 更新购物车显示数量
     function updateCartnum(num) {
         if ($(".cartnum").length > 0) {

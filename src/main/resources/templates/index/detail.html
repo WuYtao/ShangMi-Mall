@@ -9,6 +9,12 @@
     <link rel="stylesheet" type="text/css" href="/css/reclassify.css">
 </head>
 <body>
+<div th:if="${session.login==null}">
+    <div th:replace="~{/index/header::myhead}"></div>
+</div>
+<div th:if="${session.login!=null}">
+    <div th:replace="~{/index/header-login::myhead-login}"></div>
+</div>
 <div id="main" class="main">
     <!-- 面包屑 -->
     <div id="mnav" style="background: #f6f6f6;border: 1px solid #eee;">

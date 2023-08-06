@@ -9,6 +9,12 @@
     <link rel="stylesheet" type="text/css" href="/css/order.css">
 </head>
 <body>
+<div th:if="${session.login==null}">
+    <div th:replace="~{/index/header::myhead}"></div>
+</div>
+<div th:if="${session.login!=null}">
+    <div th:replace="~{/index/header-login::myhead-login}"></div>
+</div>
 <div id="main">
 
     <div class="east" style="width: 1200px;margin: 0 auto;">

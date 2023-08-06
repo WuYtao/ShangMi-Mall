@@ -309,6 +309,9 @@
     <div th:if="${session.login!=null}">
         <span class="span" style="display: none" th:text="${session.login.id}"></span>
     </div>
+    <div th:if="${session.login==null}">
+        <span class="span" style="display: none">null</span>
+    </div>
 </div>
 <footer th:replace="/index/footer::myfoot"></footer>
 </body>
@@ -321,18 +324,35 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     const addcartAll = document.querySelectorAll(".addcart")
-
+    const myCartSize = async () => {
+        const span = document.querySelector(".span").innerHTML
+        if (span === 'null') {
+            return
+        }
+        const {data} = await axios.get("http://localhost:8080/index/CartSize", {params: {userId: span}})
+        document.querySelector(".cartnum").innerHTML = data.data
+        console.log(data)
+    }
+    myCartSize()
     for (let i = 0; i < addcartAll.length; i++) {
         addcartAll[i].addEventListener("click", async function () {
             let dataId = this.getAttribute("data-id");
             const span = document.querySelector(".span").innerHTML
-            console.log(dataId)
+            if (span === 'null') {
+                window.location.href = "http://localhost:8080/index/login"
+            }
             const {data} = await axios.post("http://localhost:8080/index/yes", {
                 goodId: dataId,
                 amount: 1,
                 userId: span
             })
-            console.log(data)
+            document.querySelector(".cartnum").innerHTML = data.data.countAll
+            if (data.data.inset > 0) {
+                layer.msg("加入成功", {
+                    icon: 1,   // 成功图标
+                    time: 1200 //1.2秒关闭（如果不配置，默认是3秒）
+                });
+            }
         })
     }
 </script>
