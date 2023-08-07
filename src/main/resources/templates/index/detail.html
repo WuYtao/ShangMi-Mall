@@ -48,11 +48,9 @@
                 <span class="opri">￥<span class="opcont" id="goodssprice" th:text="${goodsById.price}">120</span></span>
             </div>
             <div class="handle" style="border:none">
-                <p class="addcart" data-id="41">加入购物车</p>
-                <!-- <p class="buy">立即购买</p> -->
+                <p class="addcart" th:data-id="${goodsById.id}">加入购物车</p>
             </div>
         </div>
-
         <!--大家都在买-->
         <div class="allbuy">
             <div class="tit"><s></s>大家都在买<s></s></div>
@@ -69,7 +67,6 @@
                         <p class="goodsprice">￥<span>9</span></p>
                         <a href="detail?id=6"><p class="goodsname">栖霞苹果 爽脆清甜</p></a>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -94,12 +91,48 @@
             </div>
         </div>
     </div>
-
+    <div th:if="${session.login!=null}">
+        <span class="span" style="display: none" th:text="${session.login.id}"></span>
+    </div>
+    <div th:if="${session.login==null}">
+        <span class="span" style="display: none">null</span>
+    </div>
 </div>
 
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/js/jquery.min.js" type="text/javascript"></script>
+<script src="/layer/layer.js" type="text/javascript"></script>
+<script>
+    const Daddcart = document.querySelector(".addcart")
+    const myCartSize = async () => {
+        const span = document.querySelector(".span").innerHTML
+        if (span === 'null') {
+            return
+        }
+        const {data} = await axios.get("http://localhost:8080/index/CartSize", {params: {userId: span}})
+        document.querySelector(".cartnum").innerHTML = data.data
+        console.log(data)
+    }
+    myCartSize()
+    Daddcart.addEventListener("click", async function () {
+        let dataId = this.getAttribute("data-id");
+        const span = document.querySelector(".span").innerHTML
+        const {data} = await axios.post("http://localhost:8080/index/yes", {
+            goodId: dataId,
+            amount: 1,
+            userId: span
+        })
+        document.querySelector(".cartnum").innerHTML = data.data.countAll
+        if (data.data.inset > 0) {
+            layer.msg("加入成功", {
+                icon: 1,   // 成功图标
+                time: 1200 //1.2秒关闭（如果不配置，默认是3秒）
+            });
+        }
+    })
+</script>
 <script type="text/javascript">
     //数量增加或减少按钮功能实现
     $("#gcut").on("click", function () {
