@@ -18,4 +18,6 @@ public interface OrdersMapper {
 
     @Delete("delete from orders where id=#{id}")
     int orderDelete(Orders orders);
+
+    int orderInsert(Orders orders);
 }

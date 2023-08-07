@@ -25,7 +25,6 @@
         <result column="goodsName" property="goods_name"/>
         <result column="cover" property="cover"/>
     </resultMap>
-
     <select id="getAll" resultMap="ordersMap">
         select o.*, u.username
         from orders o
@@ -48,5 +47,9 @@
         from orders
     </select>
 
+    <insert id="orderInsert" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into orders(total, amount, paytype, name, phone, address, systime, user_id)
+        VALUES (#{total}, #{amount}, #{paytype}, #{name}, #{phone}, #{address}, #{systime}, #{userId})
+    </insert>
 
 </mapper>

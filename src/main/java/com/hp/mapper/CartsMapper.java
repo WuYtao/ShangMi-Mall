@@ -26,4 +26,6 @@ public interface CartsMapper {
 
     //    @Update("update carts set amount = #{amount} where good_id = #{goodId} and user_id = #{userId}")
     int UpdateAmount(Carts carts);
+
+    int CartDeleteAll(Integer userId);
 }

@@ -17,7 +17,6 @@
     <div th:replace="~{/index/header-login::myhead-login}"></div>
 </div>
 <div id="main">
-
     <div id="goodslist">
         <div class="tit" style="height: 50px;padding-bottom: 10px;">商品清单</div>
         <div class="list-tit">
@@ -29,55 +28,40 @@
             </ul>
         </div>
         <div class="list-cont">
-
-            <ul>
+            <ul th:each="cartByIdAll:${CartByIdAll}">
                 <li class="li1">
                     <dl>
-                        <a href="detail?id=32">
-                            <dt><img src="../upload/4-6.jpg"></dt>
-                            <dd class="goodsname" style="padding-top: 36px;">即品坚果 台湾甄选 颗颗饱满</dd>
-                            <dd class="goods-des">留存水果本真 有滋有味</dd>
+                        <a th:href="'detail?id='+${cartByIdAll.goods.id}">
+                            <dt><img th:src="${cartByIdAll.goods.cover}"></dt>
+                            <dd class="goodsname" style="padding-top: 36px;" th:text="${cartByIdAll.goods.name}">即品坚果
+                                台湾甄选 颗颗饱满
+                            </dd>
+                            <dd class="goods-des" th:text="${cartByIdAll.goods.intro}">留存水果本真 有滋有味</dd>
                         </a>
                     </dl>
                 </li>
-                <li class="li3">￥<span>12</span></li>
-                <li class="li4">x<span>1</span></li>
-                <li class="li5">￥<span>12</span></li>
+                <li class="li3">￥<span th:text="${cartByIdAll.goods.price}">12</span></li>
+                <li class="li4">x<span th:text="${cartByIdAll.carts.amount}">1</span></li>
+                <li class="li5">￥<span th:text="${cartByIdAll.goods.price}*${cartByIdAll.carts.amount}">12</span></li>
             </ul>
-
-            <ul>
-                <li class="li1">
-                    <dl>
-                        <a href="detail?id=2">
-                            <dt><img src="../upload/1-2.jpg"></dt>
-                            <dd class="goodsname" style="padding-top: 36px;">红心火龙果</dd>
-                            <dd class="goods-des"></dd>
-                        </a>
-                    </dl>
-                </li>
-                <li class="li3">￥<span>28</span></li>
-                <li class="li4">x<span>1</span></li>
-                <li class="li5">￥<span>28</span></li>
-            </ul>
-
         </div>
         <p class="zprice" style="text-align: right;">应付总金额：
-            <span>￥<span id="shifu" style="font-size: 32px;font-weight: bold;color: #FF712B;">40</span></span>
+            <span>￥<span id="shifu" style="font-size: 32px;font-weight: bold;color: #FF712B;" th:text="${zj}">40</span></span>
         </p>
     </div>
-
     <div id="collect">
         <div class="collect-tit"><span class="tit">收货信息</span></div>
         <div class="collect-cont new-address" style="padding: 0px 0px;">
             <form action="orderPay" method="post" id="form">
-                <input type="hidden" name="id" value="11">
+                <input type="hidden" name="userId" th:value="${userById.id}">
                 <input type="hidden" name="paytype">
                 <div class="box clearfix">
                     <div class="left">
                         <span>姓名&nbsp;：&nbsp;</span>
                     </div>
                     <div class="right">
-                        <input type="text" id="name" name="name" value="华丽" placeholder="请输入收货人姓名">
+                        <input type="text" id="name" name="name" th:value="${userById.name}"
+                               placeholder="请输入收货人姓名">
                         <span class="Validform_checktip"></span></div>
                 </div>
                 <div class="box clearfix">
@@ -85,7 +69,8 @@
                         <span>电话&nbsp;：&nbsp;</span>
                     </div>
                     <div class="right">
-                        <input type="text" id="phone" name="phone" value="123456789" placeholder="请输入收货人电话">
+                        <input type="text" id="phone" name="phone" th:value="${userById.phone}"
+                               placeholder="请输入收货人电话">
                         <span class="Validform_checktip"></span></div>
                 </div>
                 <div class="box clearfix">
@@ -93,14 +78,13 @@
                         <span>地址&nbsp;：&nbsp;</span>
                     </div>
                     <div class="right">
-                        <input type="text" id="address" name="address" value="湖南浦东新区"
+                        <input type="text" id="address" name="address" th:value="${userById.address}"
                                placeholder="请输入收货地址">
                     </div>
                 </div>
             </form>
         </div>
     </div>
-
     <div class="close-foot clearfix">
         <div id="payway">
             <div class="payway-tit">支付方式</div>
@@ -113,16 +97,10 @@
                     <i class="iconfont icon-zhifubao"></i>支付宝
                     <span class="iconfont icon-xuanzhong3"></span>
                 </div>
-                <!--
-                <div class="way" data-id="3">
-                    <i class="iconfont icon-wallet"></i>余额支付
-                    <span class="iconfont icon-xuanzhong3"></span>
-                </div> -->
             </div>
         </div>
         <p class="submit" id="tijiao">立即支付</p>
     </div>
-
 </div>
 
 

@@ -10,7 +10,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Carts {
-    private  Integer id;
+    private Integer id;
     private Integer amount;
     private Integer goodId;
     private Integer userId;

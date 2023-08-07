@@ -64,10 +64,11 @@
             <div class="foot-right">
                 <div class="mdd">
                     <p class="one">
-                        <span>订单总额 ：<span class="price">￥<span class="m-price" th:text="${zj}">35</span></span></span>
+                        <span>订单总额 ：<span class="price">￥<span class="m-price"
+                                                                   th:text="${zj}">35</span></span></span>
                     </p>
                 </div>
-                <a href="orderSave">
+                <a th:href="'orderSave?id='+${session.login.id}">
                     <span class="js" style="background: rgb(255, 113, 43);">去结算</span>
                 </a>
             </div>

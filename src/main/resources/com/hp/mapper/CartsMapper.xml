@@ -32,10 +32,17 @@
         from carts
         where id = #{id}
     </delete>
+
     <update id="UpdateAmount" keyProperty="amount" keyColumn="amount" useGeneratedKeys="true">
         update carts
         set amount = #{amount}
         where good_id = #{goodId}
           and user_id = #{userId}
     </update>
+
+    <delete id="CartDeleteAll">
+        delete
+        from carts
+        where user_id = #{userId}
+    </delete>
 </mapper>
