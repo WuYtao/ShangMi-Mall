@@ -16,7 +16,7 @@
 </div>
 <div id="main" class="main">
     <!-- 购物车列表 -->
-    <div id="myCart">
+    <div id="myCart" th:if="${CartByIdAll.size()!=0}">
         <div class="cart-tit">
             <ul>
                 <li class="li2">商品封面</li>
@@ -64,7 +64,7 @@
             <div class="foot-right">
                 <div class="mdd">
                     <p class="one">
-                        <span>订单总额 ：<span class="price">￥<span class="m-price">35</span></span></span>
+                        <span>订单总额 ：<span class="price">￥<span class="m-price" th:text="${zj}">35</span></span></span>
                     </p>
                 </div>
                 <a href="orderSave">
@@ -74,9 +74,9 @@
         </div>
     </div>
     <!-- 购物车空 -->
-    <div id="cartnull" style="display:block;">
+    <div th:if="${CartByIdAll.size()==0}" id="cartnull" style="display:block;">
         <div class="null-left">
-            <img src="img/cart.png">
+            <img src="/img/cart.png">
         </div>
         <div class="null-right">
             <span>购物车还是空的呢！快去选购心仪的商品吧~~</span>

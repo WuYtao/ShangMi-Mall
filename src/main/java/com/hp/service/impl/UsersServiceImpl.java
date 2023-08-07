@@ -93,4 +93,10 @@ public class UsersServiceImpl implements UsersService {
     public int userUpdate(Users users) {
         return usersMapper.userUpdate(users);
     }
+
+    @Transactional
+    @Override
+    public int UploadAddress(Users users) {
+        return usersMapper.UploadAddress(users);
+    }
 }

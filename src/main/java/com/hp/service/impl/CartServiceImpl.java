@@ -1,6 +1,7 @@
 package com.hp.service.impl;
 
 import com.hp.mapper.CartsMapper;
+import com.hp.pojo.CartGood;
 import com.hp.pojo.Carts;
 import com.hp.service.CartsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class CartServiceImpl implements CartsService {
 
     @Transactional
     @Override
-    public List<Carts> getByIdAll(Carts carts) {
+    public List<CartGood> getByIdAll(Carts carts) {
         return cartMapper.getByIdAll(carts);
     }
 

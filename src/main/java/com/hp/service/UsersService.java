@@ -20,4 +20,6 @@ public interface UsersService {
     int userReset(Users users);
 
     int userUpdate(Users users);
+
+    int UploadAddress(Users users);
 }

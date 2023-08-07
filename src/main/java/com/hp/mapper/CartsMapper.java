@@ -1,5 +1,6 @@
 package com.hp.mapper;
 
+import com.hp.pojo.CartGood;
 import com.hp.pojo.Carts;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -19,10 +20,10 @@ public interface CartsMapper {
     @Select("select count(*) from carts where user_id = #{userId}")
     int countAll(Carts carts);
 
-    List<Carts> getByIdAll(Carts carts);
+    List<CartGood> getByIdAll(Carts carts);
 
     int CartById(Carts carts);
 
-//    @Update("update carts set amount = #{amount} where good_id = #{goodId} and user_id = #{userId}")
+    //    @Update("update carts set amount = #{amount} where good_id = #{goodId} and user_id = #{userId}")
     int UpdateAmount(Carts carts);
 }

@@ -29,4 +29,7 @@ public interface UsersMapper {
     int userReset(Users users);
 
     int userUpdate(Users users);
+
+    @Update("update users set name=#{name},phone=#{phone},address=#{address}")
+    int UploadAddress(Users users);
 }

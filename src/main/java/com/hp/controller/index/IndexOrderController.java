@@ -1,5 +1,6 @@
 package com.hp.controller.index;
 
+import com.hp.pojo.Orders;
 import com.hp.pojo.PageBean;
 import com.hp.pojo.Users;
 import com.hp.service.OrdersService;
@@ -23,4 +24,8 @@ public class IndexOrderController {
         return "index/order";
     }
 
+    @GetMapping("orderSave")
+    public String getOrdersService(Orders orders) {
+        return "index/pay";
+    }
 }

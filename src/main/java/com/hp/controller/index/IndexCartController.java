@@ -1,5 +1,6 @@
 package com.hp.controller.index;
 
+import com.hp.pojo.CartGood;
 import com.hp.pojo.Carts;
 import com.hp.service.CartsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,12 @@ public class IndexCartController {
 
     @GetMapping("cart")
     public String cart(Carts carts, Model model) {
-        List<Carts> CartByIdAll = cartService.getByIdAll(carts);
+        List<CartGood> CartByIdAll = cartService.getByIdAll(carts);
+        int c = 0;
+        for (CartGood cartGood : CartByIdAll) {
+            c += (cartGood.getGoods().getPrice() * cartGood.getCarts().getAmount());
+        }
+        model.addAttribute("zj", c);
         model.addAttribute("CartByIdAll", CartByIdAll);
         return "index/cart";
     }
