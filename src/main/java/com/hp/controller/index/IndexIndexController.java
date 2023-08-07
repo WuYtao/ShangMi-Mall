@@ -1,7 +1,6 @@
 package com.hp.controller.index;
 
 import com.hp.pojo.Goods;
-import com.hp.service.CartService;
 import com.hp.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

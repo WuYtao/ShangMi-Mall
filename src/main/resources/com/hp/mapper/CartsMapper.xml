@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hp.mapper.CartsMapper">
+    <resultMap id="getByIdAllMap" type="cartGood">
+        <id column="cartId" property="carts.id"/>
+        <result column="amount" property="carts.amount"/>
+        <result column="goodsId" property="carts.goodId"/>
+        <result column="user_id" property="carts.userId"/>
+        <result column="id" property="goods.id"/>
+        <result column="cover" property="goods.cover"/>
+        <result column="name" property="goods.name"/>
+        <result column="intro" property="goods.intro"/>
+        <result column="spec" property="goods.spec"/>
+        <result column="price" property="goods.price"/>
+        <result column="stock" property="goods.stock"/>
+        <result column="content" property="goods.content"/>
+        <result column="type_id" property="goods.typeId"/>
+    </resultMap>
+
+    <select id="getByIdAll" resultMap="getByIdAllMap">
+        select a.id AS cartId, a.amount, a.good_id AS goodsId, a.user_id, b.*
+        from (select *
+              from carts
+              where user_id = #{userId}) a
+                 left join goods b on a.good_id = b.id
+    </select>
+
+    <delete id="CartById">
+        delete
+        from carts
+        where id = #{id}
+    </delete>
+    <update id="UpdateAmount" keyProperty="amount" keyColumn="amount" useGeneratedKeys="true">
+        update carts
+        set amount = #{amount}
+        where good_id = #{goodId}
+          and user_id = #{userId}
+    </update>
+</mapper>

@@ -2,7 +2,7 @@ package com.hp.controller.index;
 
 import com.hp.pojo.Carts;
 import com.hp.pojo.Result;
-import com.hp.service.CartService;
+import com.hp.service.CartsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +13,7 @@ import java.util.Map;
 @RequestMapping("index")
 public class ResController {
     @Autowired
-    private CartService cartService;
+    private CartsService cartService;
 
     @PostMapping("yes")
     public Result cartInsert(@RequestBody Carts carts) {
@@ -30,4 +30,15 @@ public class ResController {
         int countAll = cartService.countAll(carts);
         return Result.success(countAll);
     }
+
+    @PostMapping("cut")
+    public Result cut(@RequestBody Carts carts) {
+        int insert = cartService.cut(carts);
+        int countAll = cartService.countAll(carts);
+        Map<Object, Object> map = new HashMap<>();
+        map.put("inset", insert);
+        map.put("countAll", countAll);
+        return Result.success(map);
+    }
+
 }

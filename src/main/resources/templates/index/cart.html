@@ -1,204 +1,199 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>购物车</title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="/css/public.css">
-	<link rel="stylesheet" type="text/css" href="/css/reclassify.css">
-	<link rel="stylesheet" type="text/css" href="/css/cart.css">
+    <title>购物车</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/public.css">
+    <link rel="stylesheet" type="text/css" href="/css/reclassify.css">
+    <link rel="stylesheet" type="text/css" href="/css/cart.css">
 </head>
 <body style="background: #FFF;">
 <div th:if="${session.login==null}">
-	<div th:replace="~{/index/header::myhead}"></div>
+    <div th:replace="~{/index/header::myhead}"></div>
 </div>
 <div th:if="${session.login!=null}">
-	<div th:replace="~{/index/header-login::myhead-login}"></div>
+    <div th:replace="~{/index/header-login::myhead-login}"></div>
 </div>
-	
-	<div id="main" class="main">
-	
-		<!-- 购物车列表 -->
-		
-			<div id="myCart">
-				<div class="cart-tit">
-				    <ul>
-				        <li class="li2">商品封面</li>
-				        <li class="li3">商品信息</li>
-				        <li class="li4">规格</li>
-				        <li class="li5">单价(元)</li>
-				        <li class="li6">数量</li>
-				        <li class="li7">小计(元)</li>
-				        <li class="li8">操作</li>
-				    </ul>
-				</div>
-				
-				<div class="cart-cont">
-					    <ul class="ul1">
-				            <li class="li2">
-				                <a href="detail?id=5">
-				                    <img src="../upload/1-5.jpg">
-				                </a>
-				            </li>
-				            <li class="li3">
-				                <p class="goods-name">小台芒果 自然生长 生态种植</p>
-				                <p class="goods-des">皮薄核小 果肉丰厚</p>
-				            </li>
-				            <li class="li4">
-				                <p><span>约500g</span><br></p>
-				            </li>
-				            <li class="li5">￥<span class="price">26</span></li>
-				            <li class="li6">
-				            	<span class="cut" style="cursor: pointer" onclick="cartLess(this,5)">-</span>
-				                <input type="text" class="sum" value="1" readonly="readonly">
-				                <span class="add" style="cursor: pointer" onclick="cartAdd(this,5)">+</span>
-				            </li>
-				            <li class="li7">￥<span class="subtotal">26</span></li>
-				            <li class="li8">
-				                <i style="cursor: pointer" class="iconfont icon-shanchu" onclick="cartDelete(this,5)"></i>
-				            </li>
-				        </ul>
-					</div>
-				
-					<div class="cart-cont">
-					    <ul class="ul1">
-				            <li class="li2">
-				                <a href="detail?id=6">
-				                    <img src="../upload/1-6.jpg">
-				                </a>
-				            </li>
-				            <li class="li3">
-				                <p class="goods-name">栖霞苹果 爽脆清甜</p>
-				                <p class="goods-des">肉质紧密 味道甘甜</p>
-				            </li>
-				            <li class="li4">
-				                <p><span>约550g/2个</span><br></p>
-				            </li>
-				            <li class="li5">￥<span class="price">9</span></li>
-				            <li class="li6">
-				            	<span class="cut" style="cursor: pointer" onclick="cartLess(this,6)">-</span>
-				                <input type="text" class="sum" value="1" readonly="readonly">
-				                <span class="add" style="cursor: pointer" onclick="cartAdd(this,6)">+</span>
-				            </li>
-				            <li class="li7">￥<span class="subtotal">9</span></li>
-				            <li class="li8">
-				                <i style="cursor: pointer" class="iconfont icon-shanchu" onclick="cartDelete(this,6)"></i>
-				            </li>
-				        </ul>
-					</div>
-				
-				
-				<div class="cart-foot">
-				    <div class="foot-right">
-				        <div class="mdd">
-				            <p class="one">
-				                <span>订单总额 ：<span class="price">￥<span class="m-price">35</span></span></span>
-				            </p>
-				        </div>
-				        <a href="orderSave">
-				        	<span class="js" style="background: rgb(255, 113, 43);">去结算</span>
-				        </a>
-				    </div>
-				</div>
-			</div>
-				
-				
-			
-
-		
-		<!-- 购物车空 -->
-		
-			<div id="cartnull" style="display:block;">
-				<div class="null-left">
-	    			<img src="img/cart.png">
-				</div>
-				<div class="null-right">
-				    <span>购物车还是空的呢！快去选购心仪的商品吧~~</span>
-				    <a href="index"><p>去逛逛~</p></a>
-				</div>
-			</div>
-		
-		
-	</div>
+<div id="main" class="main">
+    <!-- 购物车列表 -->
+    <div id="myCart">
+        <div class="cart-tit">
+            <ul>
+                <li class="li2">商品封面</li>
+                <li class="li3">商品信息</li>
+                <li class="li4">规格</li>
+                <li class="li5">单价(元)</li>
+                <li class="li6">数量</li>
+                <li class="li7">小计(元)</li>
+                <li class="li8">操作</li>
+            </ul>
+        </div>
+        <div class="cart-cont" th:each="Mycart:${CartByIdAll}">
+            <ul class="ul1">
+                <li class="li2">
+                    <a th:href="'detail?id='+${Mycart.goods.id}">
+                        <img th:src="${Mycart.goods.cover}">
+                    </a>
+                </li>
+                <li class="li3">
+                    <p class="goods-name" th:text="${Mycart.goods.name}">小台芒果 自然生长 生态种植</p>
+                    <p class="goods-des" th:text="${Mycart.goods.intro}">皮薄核小 果肉丰厚</p>
+                </li>
+                <li class="li4">
+                    <p><span th:text="${Mycart.goods.spec}">约500g</span><br></p>
+                </li>
+                <li class="li5">￥<span class="price" th:text="${Mycart.goods.price}">26</span></li>
+                <li class="li6">
+                    <span class="cut" th:data-i="${Mycart.goods.id}" th:data-u="${session.login.id}"
+                          style="cursor: pointer">-</span>
+                    <input type="text" class="sum" th:value="${Mycart.carts.amount}" readonly="readonly">
+                    <span class="add" th:data-i="${Mycart.goods.id}" th:data-u="${session.login.id}"
+                          style="cursor: pointer">+</span>
+                </li>
+                <li class="li7">￥<span class="subtotal" th:text="${Mycart.goods.price}*${Mycart.carts.amount}">26</span>
+                </li>
+                <li class="li8">
+                    <a style="cursor: pointer"
+                       th:href="'cartdelete?id='+${Mycart.carts.id}+'&userId='+${Mycart.carts.userId}"
+                       class="iconfont icon-shanchu">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="cart-foot">
+            <div class="foot-right">
+                <div class="mdd">
+                    <p class="one">
+                        <span>订单总额 ：<span class="price">￥<span class="m-price">35</span></span></span>
+                    </p>
+                </div>
+                <a href="orderSave">
+                    <span class="js" style="background: rgb(255, 113, 43);">去结算</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 购物车空 -->
+    <div id="cartnull" style="display:block;">
+        <div class="null-left">
+            <img src="img/cart.png">
+        </div>
+        <div class="null-right">
+            <span>购物车还是空的呢！快去选购心仪的商品吧~~</span>
+            <a href="index"><p>去逛逛~</p></a>
+        </div>
+    </div>
+</div>
 
 
 </body>
 <script src="/js/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    const add = document.querySelectorAll(".add")
+    for (let i = 0; i < add.length; i++) {
+        add[i].addEventListener("click", async function () {
+            let data_i = this.getAttribute("data-i");
+            let data_u = this.getAttribute("data-u");
+            const {data} = await axios.post("http://localhost:8080/index/yes", {
+                goodId: data_i,
+                amount: 1,
+                userId: data_u
+            })
+            document.querySelector(".cartnum").innerHTML = data.data.countAll
+            location.href = "http://localhost:8080/index/cart?userId=" + data_u;
+        })
+    }
+    const cut = document.querySelectorAll(".cut")
+    for (let i = 0; i < cut.length; i++) {
+        cut[i].addEventListener("click", async function () {
+            let data_i = this.getAttribute("data-i");
+            let data_u = this.getAttribute("data-u");
+            const {data} = await axios.post("http://localhost:8080/index/cut", {
+                goodId: data_i,
+                amount: 1,
+                userId: data_u
+            })
+            document.querySelector(".cartnum").innerHTML = data.data.countAll
+            location.href = "http://localhost:8080/index/cart?userId=" + data_u;
+        })
+    }
+</script>
 <script type="text/javascript">
-// 添加
-function cartAdd(obj, id){
-	var num = parseInt($(obj).prev().val());
-	var index = layer.load();
-	$.post("cartAdd", {id:id}, function(data){
-		layer.close(index);
-		if(data){
-			$(obj).prev().val(num + 1);
-			updateSubtotal(obj); // 更新小计
-			reloadTotal(); // 更新订单总额
-		}else{
-			layer.msg("失败了");
-		}
-	});
-}
-
-// 减少
-function cartLess(obj, id){
-	var num = parseInt($(obj).next().val());
-	var index = layer.load();
-	$.post("cartLess", {id:id}, function(data){
-		layer.close(index);
-		if(data){
-			if(num == 1){
-				//隐藏当前商品。
-				$(obj).parents(".cart-cont").fadeOut(300);
-			}else{
-				$(obj).next().val(num - 1);
-				updateSubtotal(obj); // 更新小计
-			}
-			reloadTotal(); // 更新订单总额
-		}else{
-			layer.msg("失败了");
-		}
-	});
-}
-
-// 删除
-function cartDelete(obj, id){
-	
-	var num = parseInt($(obj).parents(".cart-cont").find(".sum").val());
-	var index = layer.load();
-	
-	$.post("cartDelete", {id:id}, function(data){
-		layer.close(index);
-		if(data){
-			$(obj).parents(".cart-cont").fadeOut(300);			
-			reloadTotal();
-		}else{
-			layer.msg("失败了");
-		}
-	});	
-}
-
-
-// 更新小计
-function updateSubtotal(obj){
-	var price = parseInt($(obj).parents(".ul1").find(".price").text());
-	var sum = parseInt($(obj).parents(".ul1").find(".sum").val());
-	$(obj).parents(".ul1").find(".subtotal").text(price * sum);
-}
-
-function reloadTotal(){
-	// 刷新订单总额
-	var index = layer.load();
-	$.get("cartTotal", function(data){
-		layer.close(index);
-		$(".m-price").text(data);
-	});
-	
-	//更新购物车商品的数量。
-	$.get("cartAllAmount", function(data){
-		layer.close(index);
-		$(".cartnum").text(data);
-	});
-}
+    // 添加
+    // function cartAdd(obj, id) {
+    //     var num = parseInt($(obj).prev().val());
+    //     var index = layer.load();
+    //     $.post("cartAdd", {id: id}, function (data) {
+    //         layer.close(index);
+    //         if (data) {
+    //             $(obj).prev().val(num + 1);
+    //             updateSubtotal(obj); // 更新小计
+    //             reloadTotal(); // 更新订单总额
+    //         } else {
+    //             layer.msg("失败了");
+    //         }
+    //     });
+    // }
+    // 减少
+    // function cartLess(obj, id) {
+    //     var num = parseInt($(obj).next().val());
+    //     var index = layer.load();
+    //     $.post("cartLess", {id: id}, function (data) {
+    //         layer.close(index);
+    //         if (data) {
+    //             if (num == 1) {
+    //                 //隐藏当前商品。
+    //                 $(obj).parents(".cart-cont").fadeOut(300);
+    //             } else {
+    //                 $(obj).next().val(num - 1);
+    //                 updateSubtotal(obj); // 更新小计
+    //             }
+    //             reloadTotal(); // 更新订单总额
+    //         } else {
+    //             layer.msg("失败了");
+    //         }
+    //     });
+    // }
+    //
+    // // 删除
+    // function cartDelete(obj, id) {
+    //
+    //     var num = parseInt($(obj).parents(".cart-cont").find(".sum").val());
+    //     var index = layer.load();
+    //
+    //     $.post("cartDelete", {id: id}, function (data) {
+    //         layer.close(index);
+    //         if (data) {
+    //             $(obj).parents(".cart-cont").fadeOut(300);
+    //             reloadTotal();
+    //         } else {
+    //             layer.msg("失败了");
+    //         }
+    //     });
+    // }
+    //
+    //
+    // // 更新小计
+    // function updateSubtotal(obj) {
+    //     var price = parseInt($(obj).parents(".ul1").find(".price").text());
+    //     var sum = parseInt($(obj).parents(".ul1").find(".sum").val());
+    //     $(obj).parents(".ul1").find(".subtotal").text(price * sum);
+    // }
+    //
+    // function reloadTotal() {
+    //     // 刷新订单总额
+    //     var index = layer.load();
+    //     $.get("cartTotal", function (data) {
+    //         layer.close(index);
+    //         $(".m-price").text(data);
+    //     });
+    //
+    //     //更新购物车商品的数量。
+    //     $.get("cartAllAmount", function (data) {
+    //         layer.close(index);
+    //         $(".cartnum").text(data);
+    //     });
+    // }
 </script>
 </html>

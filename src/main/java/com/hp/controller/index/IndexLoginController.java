@@ -2,10 +2,9 @@ package com.hp.controller.index;
 
 import com.hp.pojo.Carts;
 import com.hp.pojo.Users;
-import com.hp.service.CartService;
+import com.hp.service.CartsService;
 import com.hp.service.UsersService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.DirectFieldAccessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +24,7 @@ public class IndexLoginController {
     @Autowired
     private UsersService usersService;
     @Autowired
-    private CartService cartService;
+    private CartsService cartService;
 
     @GetMapping("login")
     public String login() {
