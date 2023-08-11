@@ -1,5 +1,5 @@
 # ShangMi-Mall
-# springboot+Thymeleaf前后端分离的商城项目
+# springboot+Thymeleaf+MD5加密前后端分离的商城项目
 # 购物商城系统原创最新推出。
 <img src="https://wytwork.oss-cn-hangzhou.aliyuncs.com/1691735118834.png"/>
 
@@ -9,6 +9,9 @@
 
 3.启动运行程序，在浏览器打开8080端口即可
 
-4.可用于毕业设计，大家多点写关注和心心吧，谢谢啦。
+4.前台默认账号admin，密码1234
+  后台默认账号admin，密码123
+
+5.可用于毕业设计，大家多点写关注和心心吧，谢谢啦。
 
 <img src="https://wytwork.oss-cn-hangzhou.aliyuncs.com/1691735279083.png"/>
