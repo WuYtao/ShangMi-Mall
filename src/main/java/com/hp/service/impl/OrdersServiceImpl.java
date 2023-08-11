@@ -51,10 +51,10 @@ public class OrdersServiceImpl implements OrdersService {
     public int orderDelete(Orders orders) {
         return ordersMapper.orderDelete(orders);
     }
+
     @Transactional
     @Override
     public int orderInsert(Orders orders) {
-//       添加到订单
         Carts carts = new Carts();
         carts.setUserId(orders.getUserId());
         List<CartGood> cartByIdAll = cartsMapper.getByIdAll(carts);
@@ -69,7 +69,6 @@ public class OrdersServiceImpl implements OrdersService {
         orders.setSystime(LocalDateTime.now());
         ordersMapper.orderInsert(orders);
         Integer orderId = orders.getId();
-//      添加订单项
         int i = itemsMapper.insetINto(cartByIdAll, orderId);
         if (i > 0) {
             cartsMapper.CartDeleteAll(orders.getUserId());
